@@ -1,0 +1,38 @@
+{
+  "name": "@pangeacyber/mcp-proxy",
+  "version": "0.0.0",
+  "description": "Protect any MCP server from malicious entities and confidential PII.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": ["dist", "LICENSE.txt", "README.md"],
+  "main": "dist/proxy.js",
+  "bin": {
+    "mcp-proxy": "dist/proxy.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm run build"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "citty": "^0.1.6",
+    "consola": "^3.4.2",
+    "pangea-node-sdk": "^5.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tsconfig/node22": "22.0.1",
+    "@types/node": "22.15.3",
+    "lefthook": "1.11.12",
+    "tsup": "8.4.0",
+    "typescript": "5.8.3",
+    "ultracite": "4.2.4"
+  }
+}

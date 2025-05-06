@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "local>pangeacyber/.github:renovate-config",
+    ":semanticCommits",
+    ":semanticCommitScope(deps)"
+  ],
+  "ignorePaths": [],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "extends": [":semanticCommitScope(ci)"]
+    }
+  ]
+}
