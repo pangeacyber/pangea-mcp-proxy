@@ -18,9 +18,9 @@ In an existing MCP servers configuration like the following:
 ```json
 {
   "mcpServers": {
-    "timeserver": {
-      "command": "uvx",
-      "args": ["mcp-timeserver"]
+    "qrcode": {
+      "command": "npx",
+      "args": ["-y", "@jwalsh/mcp-server-qrcode"]
     }
   }
 }
@@ -34,7 +34,14 @@ environment variable:
   "mcpServers": {
     "timeserver": {
       "command": "npx",
-      "args": ["-y", "@pangeacyber/mcp-proxy", "--", "uvx", "mcp-timeserver"],
+      "args": [
+        "-y",
+        "@pangeacyber/mcp-proxy",
+        "--",
+        "npx",
+        "-y",
+        "@jwalsh/mcp-server-qrcode"
+      ],
       "env": {
         "PANGEA_API_TOKEN": "pts_00000000000000000000000000000000"
       }
