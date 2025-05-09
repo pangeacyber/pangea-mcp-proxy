@@ -20,11 +20,18 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import { defineCommand, runMain } from 'citty';
 import { consola } from 'consola';
-import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
+import { AIGuardService, PangeaConfig, VaultService } from 'pangea-node-sdk';
 
 const main = defineCommand({
   args: {},
   async run({ args }) {
+    if (!process.env.PANGEA_VAULT_TOKEN) {
+      throw new Error('Missing environment variable: PANGEA_VAULT_TOKEN');
+    }
+    if (!process.env.PANGEA_VAULT_ITEM_ID) {
+      throw new Error('Missing environment variable: PANGEA_VAULT_ITEM_ID');
+    }
+
     if (args._.length < 1) {
       consola.error('No command provided.');
       process.exit(1);
@@ -99,13 +106,19 @@ const main = defineCommand({
     }
 
     if (serverCapabilities?.tools) {
-      if (!process.env.PANGEA_API_TOKEN) {
-        consola.error('Environment variable PANGEA_API_TOKEN is not set.');
-        process.exit(1);
+      const vault = new VaultService(
+        process.env.PANGEA_VAULT_TOKEN!,
+        new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+      );
+      const vaultItem = await vault.getItem({
+        id: process.env.PANGEA_VAULT_ITEM_ID!,
+      });
+      if (!vaultItem.success) {
+        throw new Error('Failed to get API token from Pangea Vault.');
       }
 
       const aiGuard = new AIGuardService(
-        process.env.PANGEA_API_TOKEN!,
+        vaultItem.result.item_versions[0].token!,
         new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
       );
 

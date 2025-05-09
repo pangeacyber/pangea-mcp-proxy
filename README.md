@@ -8,8 +8,11 @@ like malicious IP addresses and Social Security numbers.
 ## Prerequisites
 
 - Node.js v22.15.0 or greater.
-- A Pangea API token with access to AI Guard. See [Service Tokens][] for
-  documentation on how to create and manage Pangea API tokens.
+- A Pangea API token with access to AI Guard. This token needs to be stored in
+  Pangea Vault. See [Service Tokens][] for documentation on how to create and
+  manage Pangea API tokens.
+- A Pangea API token with access to Vault. This will be used to fetch the above
+  token at runtime.
 
 ## Usage
 
@@ -43,15 +46,17 @@ environment variable:
         "@jwalsh/mcp-server-qrcode"
       ],
       "env": {
-        "PANGEA_API_TOKEN": "pts_00000000000000000000000000000000"
+        "PANGEA_VAULT_TOKEN": "pts_00000000000000000000000000000000",
+        "PANGEA_VAULT_ITEM_ID": "pvi_00000000000000000000000000000000"
       }
     }
   }
 }
 ```
 
-The value of `PANGEA_API_TOKEN` should be updated to the Pangea API token that
-has access to AI Guard.
+1. Update the `PANGEA_VAULT_TOKEN` value to the Pangea Vault API token.
+1. Update the `PANGEA_VAULT_ITEM_ID` value to the Vault item ID that contains
+   the Pangea AI Guard API token.
 
 [Pangea AI Guard]: https://pangea.cloud/docs/ai-guard/
 [Service Tokens]: https://pangea.cloud/docs/admin-guide/projects/credentials#service-tokens
