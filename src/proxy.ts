@@ -127,7 +127,7 @@ const main = defineCommand({
             content: [
               {
                 type: 'text',
-                text: 'Input has been blocked by Pangea AI Guard.',
+                text: `Input has been blocked by Pangea AI Guard.\n\n${JSON.stringify(guardedInput.result, null, 2)}`,
               },
             ],
           };
@@ -156,7 +156,7 @@ const main = defineCommand({
               content: [
                 {
                   type: 'text',
-                  text: 'Output has been blocked by Pangea AI Guard.',
+                  text: `Output has been blocked by Pangea AI Guard.\n\n${JSON.stringify(guardedOutput.result, null, 2)}`,
                 },
               ],
             };
