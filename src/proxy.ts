@@ -136,11 +136,12 @@ const main = defineCommand({
         }
 
         if (guardedInput.result.blocked) {
+          const { prompt_messages, prompt_text, ...rest } = guardedInput.result;
           return {
             content: [
               {
                 type: 'text',
-                text: `Input has been blocked by Pangea AI Guard.\n\n${JSON.stringify(guardedInput.result, null, 2)}`,
+                text: `Input has been blocked by Pangea AI Guard.\n\n${JSON.stringify(rest, null, 2)}`,
               },
             ],
           };
@@ -165,11 +166,13 @@ const main = defineCommand({
           }
 
           if (guardedOutput.result.blocked) {
+            const { prompt_messages, prompt_text, ...rest } =
+              guardedOutput.result;
             return {
               content: [
                 {
                   type: 'text',
-                  text: `Output has been blocked by Pangea AI Guard.\n\n${JSON.stringify(guardedOutput.result, null, 2)}`,
+                  text: `Output has been blocked by Pangea AI Guard.\n\n${JSON.stringify(rest, null, 2)}`,
                 },
               ],
             };
