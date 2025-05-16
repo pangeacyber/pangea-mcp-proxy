@@ -35,7 +35,7 @@ environment variable:
 ```json
 {
   "mcpServers": {
-    "timeserver": {
+    "qrcode": {
       "command": "npx",
       "args": [
         "-y",
