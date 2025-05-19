@@ -30,7 +30,7 @@
     "@biomejs/biome": "1.9.4",
     "@tsconfig/node22": "22.0.1",
     "@types/node": "22.15.18",
-    "lefthook": "1.11.12",
+    "lefthook": "1.11.13",
     "tsup": "8.4.0",
     "typescript": "5.8.3",
     "ultracite": "4.2.4"
