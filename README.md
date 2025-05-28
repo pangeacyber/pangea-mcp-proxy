@@ -1,8 +1,8 @@
 # Pangea MCP proxy
 
 Protect any MCP server. Now with 99% less prompt injection! The Pangea MCP proxy
-secures any existing MCP stdio-based server with the Pangea AI Guard service,
-guarding tools' inputs and outputs.
+secures any existing MCP stdio-based server with the [Pangea AI Guard][]
+service, guarding tools' inputs and outputs.
 
 What it does: Protect MCP servers from common threat vectors by running all MCP
 server I/O through Pangea AI Guard, which blocks:
