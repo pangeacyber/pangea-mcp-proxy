@@ -1,9 +1,24 @@
 # Pangea MCP proxy
 
-Protect any MCP server from malicious entities and confidential PII. The Pangea
-MCP proxy secures any existing MCP stdio-based server with the
-[Pangea AI Guard][] service, guarding tools' inputs and outputs from content
-like malicious IP addresses and Social Security numbers.
+Protect any MCP server. Now with 99% less prompt injection! The Pangea MCP proxy
+secures any existing MCP stdio-based server with the Pangea AI Guard service,
+guarding tools' inputs and outputs.
+
+What it does: Protect MCP servers from common threat vectors by running all MCP
+server I/O through Pangea AI Guard, which blocks:
+
+- Prompt injections (yes, even the ones wrapped in a riddle)
+- Malicious links, IPs, domains (via CrowdStrike, DomainTools, WhoisXML threat intel)
+- 50 types of confidential information and PII
+- 10 content filters, including toxicity, self harm, violence, and filtering by topic
+- Support for 104 spoken languages
+
+Bonus: It stores your AI Guard token safely in Pangea Vault, with automatic
+rotation.
+
+Extra bonus: Each request to AI Guard and its detection results are logged to
+your Secure Audit Log, giving you an immutable trail of activity for audits,
+debugging, and incident response.
 
 ## Prerequisites
 
