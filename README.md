@@ -1,8 +1,8 @@
 # Pangea MCP proxy
 
 Protect any MCP server. Now with 99% less prompt injection! The Pangea MCP proxy
-secures any existing MCP stdio-based server with the [Pangea AI Guard][]
-service, guarding tools' inputs and outputs.
+secures any existing MCP server with the [Pangea AI Guard][] service, guarding
+tools' inputs and outputs.
 
 What it does: Protect MCP servers from common threat vectors by running all MCP
 server I/O through Pangea AI Guard, which blocks:
@@ -31,7 +31,7 @@ debugging, and incident response.
 
 ## Usage
 
-In an existing MCP servers configuration like the following:
+In an existing stdio-based MCP server configuration like the following:
 
 ```json
 {
@@ -73,5 +73,32 @@ environment variable:
 1. Update the `PANGEA_VAULT_ITEM_ID` value to the Vault item ID that contains
    the Pangea AI Guard API token.
 
+For remote servers using HTTP or SSE, use [mcp-remote][] to turn them into stdio
+servers:
+
+```json
+{
+  "mcpServers": {
+    "proxied": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@pangeacyber/mcp-proxy",
+        "--",
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://remote.mcp.server/sse"
+      ],
+      "env": {
+        "PANGEA_VAULT_TOKEN": "pts_00000000000000000000000000000000",
+        "PANGEA_VAULT_ITEM_ID": "pvi_00000000000000000000000000000000"
+      }
+    }
+  }
+}
+```
+
 [Pangea AI Guard]: https://pangea.cloud/docs/ai-guard/
 [Service Tokens]: https://pangea.cloud/docs/admin-guide/projects/credentials#service-tokens
+[mcp-remote]: https://github.com/geelen/mcp-remote
