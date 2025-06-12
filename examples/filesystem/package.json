@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "prepare": "pnpm run build"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.12.1",
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.828.0",
     "@dotenvx/dotenvx": "^1.44.2",
