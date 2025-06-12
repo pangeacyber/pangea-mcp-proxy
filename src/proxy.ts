@@ -106,9 +106,12 @@ const main = defineCommand({
     }
 
     if (serverCapabilities?.tools) {
+      const pangeaDomain = process.env.PANGEA_DOMAIN ?? 'aws.us.pangea.cloud';
+      const pangeaConfig = new PangeaConfig({ domain: pangeaDomain });
+
       const vault = new VaultService(
         process.env.PANGEA_VAULT_TOKEN!,
-        new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+        pangeaConfig
       );
       const vaultItem = await vault.getItem({
         id: process.env.PANGEA_VAULT_ITEM_ID!,
@@ -119,15 +122,20 @@ const main = defineCommand({
 
       const aiGuard = new AIGuardService(
         vaultItem.result.item_versions[0].token!,
-        new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+        pangeaConfig
       );
 
       server.setRequestHandler(ListToolsRequestSchema, (args) =>
         client.listTools(args.params)
       );
       server.setRequestHandler(CallToolRequestSchema, async (args) => {
-        const guardedInput = await aiGuard.guardText({
-          text: JSON.stringify(args.params.arguments),
+        const guardedInput = await aiGuard.guard({
+          messages: [
+            {
+              role: 'user',
+              content: JSON.stringify(args.params.arguments),
+            },
+          ],
           recipe: 'pangea_agent_pre_tool_guard',
         });
 
@@ -149,15 +157,21 @@ const main = defineCommand({
 
         const response = await client.callTool({
           ...args.params,
-          arguments: JSON.parse(guardedInput.result.prompt_text!),
+          // @ts-expect-error `prompt_messages` is poorly typed in the OpenAPI spec.
+          arguments: JSON.parse(guardedInput.result.prompt_messages[0].content),
         });
         const { content } = response as {
           content: { type: string; text: string }[];
         };
 
         for (const contentItem of content.filter((c) => c.type === 'text')) {
-          const guardedOutput = await aiGuard.guardText({
-            text: contentItem.text,
+          const guardedOutput = await aiGuard.guard({
+            messages: [
+              {
+                role: 'user',
+                content: contentItem.text,
+              },
+            ],
             recipe: 'pangea_agent_post_tool_guard',
           });
 
@@ -166,8 +180,7 @@ const main = defineCommand({
           }
 
           if (guardedOutput.result.blocked) {
-            const { prompt_messages, prompt_text, ...rest } =
-              guardedOutput.result;
+            const { prompt_messages, ...rest } = guardedOutput.result;
             return {
               content: [
                 {
@@ -178,7 +191,8 @@ const main = defineCommand({
             };
           }
 
-          contentItem.text = guardedOutput.result.prompt_text!;
+          // @ts-expect-error `prompt_messages` is poorly typed in the OpenAPI spec.
+          contentItem.text = guardedOutput.result.prompt_messages[0].content;
         }
 
         return response;

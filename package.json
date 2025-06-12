@@ -24,7 +24,7 @@
     "@modelcontextprotocol/sdk": "^1.12.1",
     "citty": "^0.1.6",
     "consola": "^3.4.2",
-    "pangea-node-sdk": "^5.1.0"
+    "pangea-node-sdk": "5.2.0-beta.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
