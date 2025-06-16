@@ -13,7 +13,7 @@
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.828.0",
     "@dotenvx/dotenvx": "^1.44.2",
-    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@modelcontextprotocol/sdk": "^1.12.3",
     "citty": "^0.1.6",
     "consola": "^3.4.2",
     "zod": "^3.25.64"
