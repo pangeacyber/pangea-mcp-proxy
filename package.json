@@ -21,7 +21,7 @@
   },
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@modelcontextprotocol/sdk": "^1.12.3",
     "citty": "^0.1.6",
     "consola": "^3.4.2",
     "pangea-node-sdk": "^5.1.0"
