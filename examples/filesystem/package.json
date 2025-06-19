@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "22.0.2",
-    "@types/node": "22.15.31",
+    "@types/node": "22.15.32",
     "tsup": "8.5.0",
     "typescript": "5.8.3"
   }
