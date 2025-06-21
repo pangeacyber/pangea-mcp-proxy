@@ -40,8 +40,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       ultracite:
-        specifier: 4.2.11
-        version: 4.2.11
+        specifier: 4.2.13
+        version: 4.2.13
 
 packages:
 
@@ -1104,8 +1104,8 @@ packages:
   ufo@1.6.1:
     resolution: {integrity: sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==}
 
-  ultracite@4.2.11:
-    resolution: {integrity: sha512-PyUOGvcgoTZ6QT3j7n7vPp6hmiUOcOcOSbVlZkQ3AW4UCTZngJptDmrydVb7zFLjVvRTpGLiSOeXWaOtwtEqOg==}
+  ultracite@4.2.13:
+    resolution: {integrity: sha512-j49R1z3xXIPhdvU19x0z0Z4hNewJYn4F1h42ULeaCOylBuxwGVE401piPxe3aVapwue7+Ec3J6wnL/+mW4zwww==}
     hasBin: true
 
   undici-types@6.21.0:
@@ -2129,7 +2129,7 @@ snapshots:
 
   ufo@1.6.1: {}
 
-  ultracite@4.2.11:
+  ultracite@4.2.13:
     dependencies:
       commander: 14.0.0
 
