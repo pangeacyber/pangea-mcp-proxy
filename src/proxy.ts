@@ -122,9 +122,33 @@ const main = defineCommand({
         new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
       );
 
-      server.setRequestHandler(ListToolsRequestSchema, (args) =>
-        client.listTools(args.params)
-      );
+      server.setRequestHandler(ListToolsRequestSchema, async (args) => {
+        const response = await client.listTools(args.params);
+        const { tools } = response;
+        const guardedToolsList = await aiGuard.guardText({
+          text: tools
+            .map(
+              (tool) => `Tool: ${tool.name}\nDescription: ${tool.description}\n`
+            )
+            .join('\n'),
+          overrides: {
+            ignore_recipe: true,
+            prompt_injection: {
+              action: 'block',
+              disabled: false,
+            },
+          },
+        });
+
+        if (!guardedToolsList.success) {
+          throw new Error('Failed to guard tools list.');
+        }
+
+        return guardedToolsList.result.blocked
+          ? { ...response, tools: [] }
+          : response;
+      });
+
       server.setRequestHandler(CallToolRequestSchema, async (args) => {
         const guardedInput = await aiGuard.guardText({
           text: JSON.stringify(args.params.arguments),
