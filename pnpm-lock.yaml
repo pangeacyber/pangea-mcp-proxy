@@ -89,7 +89,7 @@ importers:
         specifier: ^3.830.0
         version: 3.830.0
       '@dotenvx/dotenvx':
-        specifier: ^1.44.2
+        specifier: ^1.45.1
         version: 1.45.1
       '@modelcontextprotocol/sdk':
         specifier: ^1.13.0
