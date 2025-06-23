@@ -1,7 +1,10 @@
+packages:
+  - examples/agent-demo
+  - examples/filesystem
+  - .
+
 onlyBuiltDependencies:
-  - "@biomejs/biome"
+  - '@biomejs/biome'
   - esbuild
   - lefthook
-packages:
-  - "examples/email"
-  - "."
+  - protobufjs

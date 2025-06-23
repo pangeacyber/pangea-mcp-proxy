@@ -1,0 +1,29 @@
+{
+  "name": "@pangeacyber/mcp-proxy-agent-demo",
+  "version": "0.0.0-development",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm run build"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "2.2.10",
+    "@dotenvx/dotenvx": "1.45.1",
+    "@mastra/core": "0.10.6",
+    "@mastra/mcp": "0.10.4",
+    "@modelcontextprotocol/sdk": "1.13.0",
+    "citty": "0.1.6",
+    "consola": "3.4.2",
+    "zod": "3.25.67"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "22.0.2",
+    "@types/node": "22.15.32",
+    "tsup": "8.5.0",
+    "typescript": "5.8.3"
+  }
+}
