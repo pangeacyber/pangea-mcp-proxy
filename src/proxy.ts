@@ -125,12 +125,18 @@ const main = defineCommand({
       server.setRequestHandler(ListToolsRequestSchema, async (args) => {
         const response = await client.listTools(args.params);
         const { tools } = response;
-        const guardedToolsList = await aiGuard.guardText({
-          text: tools
-            .map(
-              (tool) => `Tool: ${tool.name}\nDescription: ${tool.description}\n`
-            )
-            .join('\n'),
+        const guardedToolsList = await aiGuard.guard({
+          messages: [
+            {
+              role: 'user',
+              content: tools
+                .map(
+                  (tool) =>
+                    `Tool: ${tool.name}\nDescription: ${tool.description}\n`
+                )
+                .join('\n'),
+            },
+          ],
           overrides: {
             ignore_recipe: true,
             prompt_injection: {
@@ -150,8 +156,13 @@ const main = defineCommand({
       });
 
       server.setRequestHandler(CallToolRequestSchema, async (args) => {
-        const guardedInput = await aiGuard.guardText({
-          text: JSON.stringify(args.params.arguments),
+        const guardedInput = await aiGuard.guard({
+          messages: [
+            {
+              role: 'user',
+              content: JSON.stringify(args.params.arguments),
+            },
+          ],
           recipe: 'pangea_agent_pre_tool_guard',
         });
 
@@ -180,8 +191,13 @@ const main = defineCommand({
         };
 
         for (const contentItem of content.filter((c) => c.type === 'text')) {
-          const guardedOutput = await aiGuard.guardText({
-            text: contentItem.text,
+          const guardedOutput = await aiGuard.guard({
+            messages: [
+              {
+                role: 'user',
+                content: contentItem.text,
+              },
+            ],
             recipe: 'pangea_agent_post_tool_guard',
           });
 

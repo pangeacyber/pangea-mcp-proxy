@@ -18,8 +18,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: 5.2.0-beta.3
+        version: 5.2.0-beta.3
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -66,6 +66,9 @@ importers:
       consola:
         specifier: 3.4.2
         version: 3.4.2
+      pangea-node-sdk:
+        specifier: 5.2.0-beta.3
+        version: 5.2.0-beta.3
       zod:
         specifier: 3.25.67
         version: 3.25.67
@@ -1698,6 +1701,10 @@ packages:
       supports-color:
         optional: true
 
+  decode-uri-component@0.2.2:
+    resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
+    engines: {node: '>=0.10'}
+
   delayed-stream@1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
@@ -1847,6 +1854,10 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
+
+  filter-obj@1.1.0:
+    resolution: {integrity: sha512-8rXg1ZnX7xzy2NGDVkBVaAy+lSlPNwad13BtgSlLuxfIslyt5Vg64U7tFcCt4WS1R0hvtnQybT/IyCkGZ3DpXQ==}
+    engines: {node: '>=0.10.0'}
 
   finalhandler@2.1.0:
     resolution: {integrity: sha512-/t88Ty3d5JWQbWYgaOGCCYfXRwV1+be02WqYYlL6h0lEiUAMPM8o8qKGO01YIkOHzka2up08wvgYD0mDiI+q3Q==}
@@ -2240,6 +2251,9 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
+  neoqs@6.13.0:
+    resolution: {integrity: sha512-IysBpjrEG9qiUb/IT6XrXSz2ASzBxLebp4s8/GBm7STYC315vMNqH0aWdRR+f7KvXK4aRlLcf5r2Z6dOTxQSrQ==}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -2286,8 +2300,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pangea-node-sdk@5.1.0:
-    resolution: {integrity: sha512-bacW3Y6Nqlx1GqDX0P13qaAIXkyW7Fr1xpBhSsgpg0Xyj+DOPpd4OpAiXR5PwV/u1XmvLfiONxannhR0EZ3T4w==}
+  pangea-node-sdk@5.2.0-beta.3:
+    resolution: {integrity: sha512-vQPcIHpaCEYGpdss4/a5GNBlqaCWIhB3KD4dQDqChLXUKHmuIbXIYk4Cs1y2/ql1RbvvNw5zzx+o8R2EkI7m/A==}
     engines: {node: 20 || >=22}
 
   parseurl@1.3.3:
@@ -2400,6 +2414,9 @@ packages:
     resolution: {integrity: sha512-y+WKFlBR8BGXnsNlIHFGPZmyDf3DFMoLhaflAnyZgV6rG6xu+JwesTo2Q9R6XwYmtmwAFCkAk3e35jEdoeh/3g==}
     engines: {node: '>=10'}
 
+  proper-url-join@2.1.2:
+    resolution: {integrity: sha512-wp0MVpPYbQhwxRFjFkhWwHUoH5PyAA0SCVUpwRxjc9JzSzddPB4GDhu5I+eCYhdpG0S7jvVubsLPEi4pFd77rg==}
+
   protobufjs@7.5.3:
     resolution: {integrity: sha512-sildjKwVqOI2kmFDiXQ6aEB0fjYTafpEvIBs8tOR8qI4spuL9OPROLVu2qZqi/xgCfsHIwVqlaF8JBjWFHnKbw==}
     engines: {node: '>=12.0.0'}
@@ -2422,6 +2439,10 @@ packages:
   qs@6.14.0:
     resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
     engines: {node: '>=0.6'}
+
+  query-string@7.1.3:
+    resolution: {integrity: sha512-hh2WYhq4fi8+b+/2Kg9CEge4fDPvHS534aOOvOZeQ3+Vf2mCFsaFBYj0i+iXcAq6I9Vzp5fjMFBlONvayDC1qg==}
+    engines: {node: '>=6'}
 
   quick-format-unescaped@4.0.4:
     resolution: {integrity: sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==}
@@ -2552,6 +2573,10 @@ packages:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
 
+  split-on-first@1.1.0:
+    resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
+    engines: {node: '>=6'}
+
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
@@ -2563,6 +2588,10 @@ packages:
   statuses@2.0.2:
     resolution: {integrity: sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==}
     engines: {node: '>= 0.8'}
+
+  strict-uri-encode@2.0.0:
+    resolution: {integrity: sha512-QwiXZgpRcKkhTj2Scnn++4PKtWsH0kpzZ62L2R6c/LUVYv7hVnZqcg2+sMuT6R7Jusu1vviK/MFsu6kNJfWlEQ==}
+    engines: {node: '>=4'}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -5026,6 +5055,8 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
+  decode-uri-component@0.2.2: {}
+
   delayed-stream@1.0.0: {}
 
   depd@2.0.0: {}
@@ -5195,6 +5226,8 @@ snapshots:
   fdir@6.4.5(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
+
+  filter-obj@1.1.0: {}
 
   finalhandler@2.1.0:
     dependencies:
@@ -5525,6 +5558,8 @@ snapshots:
 
   negotiator@1.0.0: {}
 
+  neoqs@6.13.0: {}
+
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -5557,7 +5592,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pangea-node-sdk@5.1.0:
+  pangea-node-sdk@5.2.0-beta.3:
     dependencies:
       '@aws-crypto/crc32c': 5.2.0
       crypto-js: 4.2.0
@@ -5565,7 +5600,9 @@ snapshots:
       formdata-node: 6.0.3
       json-canon: 1.0.1
       merkle-tools: 1.4.1
+      neoqs: 6.13.0
       promise-retry: 2.0.1
+      proper-url-join: 2.1.2
 
   parseurl@1.3.3: {}
 
@@ -5667,6 +5704,10 @@ snapshots:
       err-code: 2.0.3
       retry: 0.12.0
 
+  proper-url-join@2.1.2:
+    dependencies:
+      query-string: 7.1.3
+
   protobufjs@7.5.3:
     dependencies:
       '@protobufjs/aspromise': 1.1.2
@@ -5701,6 +5742,13 @@ snapshots:
   qs@6.14.0:
     dependencies:
       side-channel: 1.1.0
+
+  query-string@7.1.3:
+    dependencies:
+      decode-uri-component: 0.2.2
+      filter-obj: 1.1.0
+      split-on-first: 1.1.0
+      strict-uri-encode: 2.0.0
 
   quick-format-unescaped@4.0.4: {}
 
@@ -5870,11 +5918,15 @@ snapshots:
     dependencies:
       whatwg-url: 7.1.0
 
+  split-on-first@1.1.0: {}
+
   split2@4.2.0: {}
 
   statuses@2.0.1: {}
 
   statuses@2.0.2: {}
+
+  strict-uri-encode@2.0.0: {}
 
   string-width@4.2.3:
     dependencies:
