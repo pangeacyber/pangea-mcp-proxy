@@ -4,7 +4,9 @@ packages:
   - .
 
 onlyBuiltDependencies:
-  - '@biomejs/biome'
+  - "@biomejs/biome"
   - esbuild
   - lefthook
   - protobufjs
+
+injectWorkspacePackages: true
