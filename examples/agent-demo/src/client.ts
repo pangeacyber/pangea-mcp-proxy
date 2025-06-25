@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { createOpenAI } from '@ai-sdk/openai';
 import dotenv from '@dotenvx/dotenvx';
 import { Agent } from '@mastra/core/agent';
 import { MCPClient } from '@mastra/mcp';
@@ -34,12 +35,26 @@ const main = defineCommand({
       default:
         'Compose a morning report of the weather in Paris and any recent MLS results.',
     },
-    awsModelId: {
+    provider: {
+      // TODO: switch to enum type when citty publishes a new release.
+      // type: 'enum',
+      // options: ['openai', 'bedrock'],
+      type: 'string',
+      description: 'Model provider. Must be one of: openai, bedrock.',
+      default: 'bedrock',
+    },
+    model: {
       type: 'string',
       default: 'meta.llama3-1-70b-instruct-v1:0',
     },
+    openaiBaseUrl: {
+      type: 'string',
+      description: 'URL prefix for OpenAI API calls.',
+      default: 'https://api.openai.com/v1',
+    },
     awsRegion: {
       type: 'string',
+      description: 'AWS region for Bedrock API calls.',
       default: 'us-west-2',
     },
   },
@@ -49,6 +64,12 @@ const main = defineCommand({
     }
     if (!process.env.PANGEA_VAULT_ITEM_ID) {
       throw new Error('Missing environment variable: PANGEA_VAULT_ITEM_ID');
+    }
+
+    if (!['openai', 'bedrock'].includes(args.provider)) {
+      throw new Error(
+        'Invalid model provider. Must be one of: openai, bedrock'
+      );
     }
 
     const mcp = new MCPClient({
@@ -61,7 +82,13 @@ const main = defineCommand({
     const agent = new Agent({
       name: 'Agent with MCP Tools',
       instructions: 'You can use tools from connected MCP servers.',
-      model: createAmazonBedrock({ region: args.awsRegion })(args.awsModelId),
+      model:
+        args.provider === 'openai'
+          ? createOpenAI({
+              baseURL: args.openaiBaseUrl,
+              compatibility: 'compatible',
+            })(args.model)
+          : createAmazonBedrock({ region: args.awsRegion })(args.model),
       tools: await mcp.getTools(),
     });
 
