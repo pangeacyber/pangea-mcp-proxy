@@ -12,7 +12,7 @@ A sample agent that uses the Pangea MCP proxy to communicate with the
 
 ## Usage
 
-Set the following environments variables:
+Set the following environment variables:
 
 - `PANGEA_VAULT_TOKEN`: Pangea Vault API token.
 - `PANGEA_VAULT_ITEM_ID`: Pangea Vault item ID of the Vault item that contains

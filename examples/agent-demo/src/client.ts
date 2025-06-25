@@ -3,6 +3,7 @@
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { createOpenAI } from '@ai-sdk/openai';
 import dotenv from '@dotenvx/dotenvx';
+import { Mastra } from '@mastra/core';
 import { Agent } from '@mastra/core/agent';
 import { MCPClient } from '@mastra/mcp';
 import { defineCommand, runMain } from 'citty';
@@ -90,6 +91,15 @@ const main = defineCommand({
             })(args.model)
           : createAmazonBedrock({ region: args.awsRegion })(args.model),
       tools: await mcp.getTools(),
+    });
+
+    const _mastra = new Mastra({
+      agents: { agent },
+      telemetry: {
+        serviceName: 'agent-demo',
+        enabled: true,
+        export: { type: 'otlp' },
+      },
     });
 
     const vault = new VaultService(

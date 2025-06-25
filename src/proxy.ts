@@ -184,7 +184,10 @@ const main = defineCommand({
 
         const response = await client.callTool({
           ...args.params,
-          arguments: JSON.parse(guardedInput.result.prompt_text!),
+          arguments: JSON.parse(
+            (guardedInput.result.prompt_messages?.[0] as { content: string })
+              ?.content ?? '{}'
+          ),
         });
         const { content } = response as {
           content: { type: string; text: string }[];
@@ -218,7 +221,9 @@ const main = defineCommand({
             };
           }
 
-          contentItem.text = guardedOutput.result.prompt_text!;
+          contentItem.text = (
+            guardedOutput.result.prompt_messages?.[0] as { content: string }
+          )?.content;
         }
 
         return response;
