@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit",
-    "prepare": "pnpm run build"
+    "typecheck": "tsc --noEmit"
   },
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
