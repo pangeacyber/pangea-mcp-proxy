@@ -5,28 +5,24 @@ LABEL org.opencontainers.image.source="https://github.com/pangeacyber/pangea-mcp
   org.opencontainers.image.url="https://pangea.cloud" \
   org.opencontainers.image.licenses="Apache-2.0"
 
-WORKDIR /app
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 FROM base AS build
 
-ADD . .
+COPY . /usr/src/app
+WORKDIR /usr/src/app
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile --prod=false
-
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run -r build
+RUN pnpm deploy --filter=@pangeacyber/mcp-proxy-agent-demo --prod /prod/agent-demo
 
 FROM base AS release
 
 ENV NODE_ENV=production
 
-COPY --from=build /app/examples/agent-demo/dist /app/examples/agent-demo/dist
-COPY --from=build /app/examples/agent-demo/package.json /app/examples/agent-demo/package.json
+COPY --from=build /prod/agent-demo /prod/agent-demo
+WORKDIR /prod/agent-demo
 
-COPY --from=build /app/package.json /app/package.json
-COPY --from=build /app/pnpm-lock.yaml /app/pnpm-lock.yaml
-
-RUN pnpm install --frozen-lockfile --prod=true
-
-ENTRYPOINT ["node", "/app/examples/agent-demo/dist/client.js"]
+ENTRYPOINT ["node", "/prod/agent-demo/dist/client.js"]
