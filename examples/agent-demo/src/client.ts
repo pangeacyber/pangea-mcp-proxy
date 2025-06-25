@@ -8,7 +8,7 @@ import { defineCommand, runMain } from 'citty';
 import consola from 'consola';
 import { AIGuardService, PangeaConfig, VaultService } from 'pangea-node-sdk';
 
-dotenv.config({ overload: true, quiet: true });
+dotenv.config({ ignore: ['MISSING_ENV_FILE'], overload: true, quiet: true });
 
 function mcpProxy(args: readonly string[]) {
   return {
@@ -22,6 +22,11 @@ function mcpProxy(args: readonly string[]) {
 }
 
 const main = defineCommand({
+  meta: {
+    name: 'agent-demo',
+    version: '0.0.0',
+    description: 'A demo agent that uses MCP servers.',
+  },
   args: {
     input: {
       type: 'string',
@@ -31,7 +36,7 @@ const main = defineCommand({
     },
     awsModelId: {
       type: 'string',
-      default: 'anthropic.claude-3-5-sonnet-20240620-v1:0',
+      default: 'meta.llama3-1-70b-instruct-v1:0',
     },
     awsRegion: {
       type: 'string',
