@@ -148,6 +148,7 @@ const main = defineCommand({
               disabled: false,
             },
           },
+          app_name: process.env.APP_NAME,
         });
 
         if (!guardedToolsList.success) {
@@ -168,6 +169,7 @@ const main = defineCommand({
             },
           ],
           recipe: 'pangea_agent_pre_tool_guard',
+          app_name: process.env.APP_NAME,
         });
 
         if (!guardedInput.success) {
@@ -206,6 +208,7 @@ const main = defineCommand({
               },
             ],
             recipe: 'pangea_agent_post_tool_guard',
+            app_name: process.env.APP_NAME,
           });
 
           if (!guardedOutput.success) {
