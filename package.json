@@ -7,7 +7,11 @@
   },
   "license": "Apache-2.0",
   "type": "module",
-  "files": ["dist", "LICENSE.txt", "README.md"],
+  "files": [
+    "dist",
+    "LICENSE.txt",
+    "README.md"
+  ],
   "main": "dist/proxy.js",
   "bin": {
     "mcp-proxy": "dist/proxy.js"
@@ -27,12 +31,12 @@
     "pangea-node-sdk": "5.2.0-beta.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.5",
     "@tsconfig/node22": "22.0.2",
     "@types/node": "22.15.32",
     "lefthook": "1.11.14",
     "tsup": "8.5.0",
     "typescript": "5.8.3",
-    "ultracite": "4.2.13"
+    "ultracite": "5.0.23"
   }
 }

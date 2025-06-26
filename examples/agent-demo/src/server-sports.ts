@@ -14,6 +14,7 @@ async function main() {
         description: 'Get the current Major League Soccer (MLS) scoreboard',
         inputSchema: z.object({}),
         outputSchema: z.string(),
+        // biome-ignore lint/suspicious/useAwait: matches expected signature.
         execute: async () => {
           // Uncomment to use live data.
           // const response = await fetch('https://plaintextsports.com/mls/');
