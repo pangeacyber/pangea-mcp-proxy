@@ -20,6 +20,7 @@ function mcpProxy(args: readonly string[]) {
       PANGEA_VAULT_TOKEN: process.env.PANGEA_VAULT_TOKEN!,
       PANGEA_VAULT_ITEM_ID: process.env.PANGEA_VAULT_ITEM_ID!,
       PANGEA_BASE_URL_TEMPLATE: process.env.PANGEA_BASE_URL_TEMPLATE!,
+      APP_NAME: 'My AI Agent',
     },
   };
 }
