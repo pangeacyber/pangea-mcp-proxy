@@ -37,3 +37,9 @@ Set the following [environment variables](https://mastra.ai/en/docs/observabilit
 
 - `OTEL_EXPORTER_OTLP_ENDPOINT`: OTLP endpoint URL.
 - `OTEL_EXPORTER_OTLP_HEADERS`: Optional headers for OTLP requests.
+
+### Custom Pangea base URL
+
+To use a Pangea base URL other than the default
+`https://{SERVICE_NAME}.aws.us.pangea.cloud`, set the `PANGEA_BASE_URL_TEMPLATE`
+environment variable to a custom template (e.g. `https://{SERVICE_NAME}.dev.pangea.cloud`).

@@ -19,6 +19,7 @@ function mcpProxy(args: readonly string[]) {
     env: {
       PANGEA_VAULT_TOKEN: process.env.PANGEA_VAULT_TOKEN!,
       PANGEA_VAULT_ITEM_ID: process.env.PANGEA_VAULT_ITEM_ID!,
+      PANGEA_BASE_URL_TEMPLATE: process.env.PANGEA_BASE_URL_TEMPLATE!,
     },
   };
 }
@@ -102,9 +103,13 @@ const main = defineCommand({
       },
     });
 
+    const pangeaConfig = new PangeaConfig({
+      baseUrlTemplate: process.env.PANGEA_BASE_URL_TEMPLATE,
+    });
+
     const vault = new VaultService(
       process.env.PANGEA_VAULT_TOKEN!,
-      new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+      pangeaConfig
     );
     const vaultItem = await vault.getItem({
       id: process.env.PANGEA_VAULT_ITEM_ID!,
@@ -115,7 +120,7 @@ const main = defineCommand({
 
     const aiGuard = new AIGuardService(
       vaultItem.result.item_versions[0].token!,
-      new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+      pangeaConfig
     );
 
     const guardedInput = await aiGuard.guard({

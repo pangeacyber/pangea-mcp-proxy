@@ -106,9 +106,13 @@ const main = defineCommand({
     }
 
     if (serverCapabilities?.tools) {
+      const pangeaConfig = new PangeaConfig({
+        baseUrlTemplate: process.env.PANGEA_BASE_URL_TEMPLATE,
+      });
+
       const vault = new VaultService(
         process.env.PANGEA_VAULT_TOKEN!,
-        new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+        pangeaConfig
       );
       const vaultItem = await vault.getItem({
         id: process.env.PANGEA_VAULT_ITEM_ID!,
@@ -119,7 +123,7 @@ const main = defineCommand({
 
       const aiGuard = new AIGuardService(
         vaultItem.result.item_versions[0].token!,
-        new PangeaConfig({ domain: 'aws.us.pangea.cloud' })
+        pangeaConfig
       );
 
       server.setRequestHandler(ListToolsRequestSchema, async (args) => {

@@ -99,6 +99,12 @@ servers:
 }
 ```
 
+### Custom Pangea base URL
+
+To use a Pangea base URL other than the default
+`https://{SERVICE_NAME}.aws.us.pangea.cloud`, set the `PANGEA_BASE_URL_TEMPLATE`
+environment variable to a custom template (e.g. `https://{SERVICE_NAME}.dev.pangea.cloud`).
+
 [Pangea AI Guard]: https://pangea.cloud/docs/ai-guard/
 [Service Tokens]: https://pangea.cloud/docs/admin-guide/projects/credentials#service-tokens
 [mcp-remote]: https://github.com/geelen/mcp-remote
