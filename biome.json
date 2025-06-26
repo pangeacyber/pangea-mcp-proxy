@@ -6,8 +6,17 @@
       "complexity": {
         "noExcessiveCognitiveComplexity": "off"
       },
+      "correctness": {
+        "noUnusedVariables": {
+          "level": "error",
+          "options": {
+            "ignoreRestSiblings": true
+          }
+        }
+      },
       "nursery": {
-        "noNestedTernary": "off"
+        "noAwaitInLoop": "off",
+        "noShadow": "off"
       },
       "style": {
         "noNonNullAssertion": "off"
