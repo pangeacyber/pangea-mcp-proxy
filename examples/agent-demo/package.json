@@ -15,7 +15,7 @@
     "@dotenvx/dotenvx": "1.45.1",
     "@mastra/core": "0.10.6",
     "@mastra/mcp": "0.10.4",
-    "@modelcontextprotocol/sdk": "1.13.0",
+    "@modelcontextprotocol/sdk": "1.13.1",
     "citty": "0.1.6",
     "consola": "3.4.2",
     "pangea-node-sdk": "5.2.0-beta.3",
