@@ -11,13 +11,21 @@ async function main() {
     tools: {
       getMlsScoreboard: createTool({
         id: 'get_mls_scoreboard',
-        description: 'Get the current Major League Soccer (MLS) scoreboard',
-        inputSchema: z.object({}),
+        description:
+          'Get the Major League Soccer (MLS) scores for a given date',
+        inputSchema: z.object({
+          date: z
+            .string()
+            .describe('The date to get MLS scores for, in YYYY-MM-DD format'),
+        }),
         outputSchema: z.string(),
+        // biome-ignore lint/correctness/noUnusedFunctionParameters: keep for demo.
         // biome-ignore lint/suspicious/useAwait: matches expected signature.
-        execute: async () => {
+        execute: async ({ context: { date } }) => {
           // Uncomment to use live data.
-          // const response = await fetch('https://plaintextsports.com/mls/');
+          // const response = await fetch(
+          //   `https://plaintextsports.com/mls/${date}/`
+          // );
           // return await response.text();
 
           // Mock data.
