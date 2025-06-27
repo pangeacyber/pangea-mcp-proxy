@@ -84,7 +84,7 @@ const main = defineCommand({
 
     const agent = new Agent({
       name: 'Agent with MCP Tools',
-      instructions: 'You can use tools from connected MCP servers.',
+      instructions: `Today is ${new Date().toISOString().split('T')[0]}. Use the provided tools to prepare a morning report for the user.`,
       model:
         args.provider === 'openai'
           ? createOpenAI({
