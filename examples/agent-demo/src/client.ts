@@ -7,13 +7,27 @@ import { Mastra } from '@mastra/core';
 import { Agent } from '@mastra/core/agent';
 import { PinoLogger } from '@mastra/loggers';
 import { MCPClient } from '@mastra/mcp';
+import { SeverityNumber } from '@opentelemetry/api-logs';
+import { OTLPLogExporter } from '@opentelemetry/exporter-logs-otlp-grpc';
+import {
+  BatchLogRecordProcessor,
+  LoggerProvider,
+} from '@opentelemetry/sdk-logs';
 import { defineCommand, runMain } from 'citty';
 import consola from 'consola';
 import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
 
 const APP_NAME = 'My AI Agent';
+const SYSTEM_PROMPT = `Today is ${new Date().toISOString().split('T')[0]}. Use the provided tools to prepare a morning report for the user.`;
 
 dotenv.config({ ignore: ['MISSING_ENV_FILE'], overload: true, quiet: true });
+
+const logExporter = new OTLPLogExporter();
+const loggerProvider = new LoggerProvider({
+  processors: [new BatchLogRecordProcessor(logExporter)],
+});
+
+const logger = loggerProvider.getLogger('default', '1.0.0');
 
 function mcpProxy(args: readonly string[]) {
   return {
@@ -90,7 +104,7 @@ const main = defineCommand({
 
     const agent = new Agent({
       name: 'Agent with MCP Tools',
-      instructions: `Today is ${new Date().toISOString().split('T')[0]}. Use the provided tools to prepare a morning report for the user.`,
+      instructions: SYSTEM_PROMPT,
       model:
         args.provider === 'openai'
           ? createOpenAI({
@@ -108,7 +122,29 @@ const main = defineCommand({
         serviceName: 'agent-demo',
         enabled: true,
         sampling: { type: 'always_on' },
-        export: { type: 'otlp', protocol: 'http' },
+        export: { type: 'otlp', protocol: 'grpc' },
+      },
+    });
+
+    // Log system message.
+    logger.emit({
+      severityNumber: SeverityNumber.INFO,
+      body: { role: 'system', content: SYSTEM_PROMPT },
+      attributes: {
+        'event.name': 'gen_ai.system.message',
+        'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
+        'gen_ai.request.model': args.model,
+      },
+    });
+
+    // Log user message.
+    logger.emit({
+      severityNumber: SeverityNumber.INFO,
+      body: { role: 'user', content: args.input },
+      attributes: {
+        'event.name': 'gen_ai.user.message',
+        'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
+        'gen_ai.request.model': args.model,
       },
     });
 
@@ -146,6 +182,22 @@ const main = defineCommand({
       temperature: 0.1,
     });
 
+    // Log LLM response.
+    logger.emit({
+      severityNumber: SeverityNumber.INFO,
+      body: { role: 'assistant', content: result.text },
+      attributes: {
+        'event.name': 'gen_ai.assistant.message',
+        'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
+        'gen_ai.request.model': args.model,
+        'gen_ai.response.id': result.response.id,
+        'gen_ai.response.model': result.response.modelId,
+        'gen_ai.usage.output_tokens': result.usage.completionTokens,
+        'gen_ai.usage.input_tokens': result.usage.promptTokens,
+        'gen_ai.response.finish_reasons': result.finishReason,
+      },
+    });
+
     const guardedOutput = await aiGuard.guard({
       messages: [
         {
@@ -172,7 +224,7 @@ const main = defineCommand({
     consola.log(result.text);
 
     abortController.abort();
-    await mcp.disconnect();
+    await Promise.all([mcp.disconnect(), loggerProvider.shutdown()]);
     process.exit(0);
   },
 });
