@@ -105,7 +105,8 @@ const main = defineCommand({
       telemetry: {
         serviceName: 'agent-demo',
         enabled: true,
-        export: { type: 'otlp' },
+        sampling: { type: 'always_on' },
+        export: { type: 'otlp', protocol: 'http' },
       },
     });
 

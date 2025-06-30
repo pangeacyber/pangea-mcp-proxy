@@ -1,5 +1,10 @@
 {
-  "entry": ["src/client.ts", "src/server-sports.ts", "src/server-weather.ts"],
+  "entry": [
+    "src/client.ts",
+    "src/server-sports.ts",
+    "src/server-weather.ts",
+    "src/telemetry.ts"
+  ],
   "format": ["esm"],
   "dts": true,
   "clean": true,
