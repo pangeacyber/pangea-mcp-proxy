@@ -5,10 +5,11 @@ import { createOpenAI } from '@ai-sdk/openai';
 import dotenv from '@dotenvx/dotenvx';
 import { Mastra } from '@mastra/core';
 import { Agent } from '@mastra/core/agent';
+import { PinoLogger } from '@mastra/loggers';
 import { MCPClient } from '@mastra/mcp';
 import { defineCommand, runMain } from 'citty';
 import consola from 'consola';
-import { AIGuardService, PangeaConfig, VaultService } from 'pangea-node-sdk';
+import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
 
 dotenv.config({ ignore: ['MISSING_ENV_FILE'], overload: true, quiet: true });
 
@@ -62,6 +63,9 @@ const main = defineCommand({
     },
   },
   async run({ args }) {
+    if (!process.env.PANGEA_AIDR_TOKEN) {
+      throw new Error('Missing environment variable: PANGEA_AIDR_TOKEN');
+    }
     if (!process.env.PANGEA_VAULT_TOKEN) {
       throw new Error('Missing environment variable: PANGEA_VAULT_TOKEN');
     }
@@ -97,6 +101,7 @@ const main = defineCommand({
 
     const _mastra = new Mastra({
       agents: { agent },
+      logger: new PinoLogger({ name: 'Mastra', level: 'info' }),
       telemetry: {
         serviceName: 'agent-demo',
         enabled: true,
@@ -108,19 +113,8 @@ const main = defineCommand({
       baseUrlTemplate: process.env.PANGEA_BASE_URL_TEMPLATE,
     });
 
-    const vault = new VaultService(
-      process.env.PANGEA_VAULT_TOKEN!,
-      pangeaConfig
-    );
-    const vaultItem = await vault.getItem({
-      id: process.env.PANGEA_VAULT_ITEM_ID!,
-    });
-    if (!vaultItem.success) {
-      throw new Error('Failed to get API token from Pangea Vault.');
-    }
-
     const aiGuard = new AIGuardService(
-      vaultItem.result.item_versions[0].token!,
+      process.env.PANGEA_AIDR_TOKEN!,
       pangeaConfig
     );
 
@@ -145,6 +139,7 @@ const main = defineCommand({
     const abortController = new AbortController();
     const result = await agent.generate(args.input, {
       abortSignal: abortController.signal,
+      temperature: 0.1,
     });
 
     const guardedOutput = await aiGuard.guard({

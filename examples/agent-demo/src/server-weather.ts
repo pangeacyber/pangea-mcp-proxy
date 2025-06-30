@@ -23,10 +23,13 @@ async function main() {
         inputSchema: z.object({
           location: z.string().describe('The location to get the weather for'),
         }),
-        outputSchema: z.string(),
+
+        // https://github.com/mastra-ai/mastra/issues/5488
+        // outputSchema: z.object({ weather: z.string() }),
+
         execute: async ({ context: { location } }) => {
           const response = await fetch(`https://wttr.in/${location}?A&T`);
-          return await response.text();
+          return { weather: await response.text() };
         },
       }),
     },

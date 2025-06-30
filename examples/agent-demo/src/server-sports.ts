@@ -18,7 +18,10 @@ async function main() {
             .string()
             .describe('The date to get MLS scores for, in YYYY-MM-DD format'),
         }),
-        outputSchema: z.string(),
+
+        // https://github.com/mastra-ai/mastra/issues/5488
+        // outputSchema: z.object({ scoreboard: z.string() }),
+
         // biome-ignore lint/correctness/noUnusedFunctionParameters: keep for demo.
         // biome-ignore lint/suspicious/useAwait: matches expected signature.
         execute: async ({ context: { date } }) => {
@@ -26,10 +29,11 @@ async function main() {
           // const response = await fetch(
           //   `https://plaintextsports.com/mls/${date}/`
           // );
-          // return await response.text();
+          // return {scoreboard: await response.text()};
 
           // Mock data.
-          return `
+          return {
+            scoreboard: `
 +---------------+
 |  11:30 PM UTC |
 | TOR    3-10-4 |
@@ -95,7 +99,8 @@ async function main() {
 | VAN    10-2-5 |
 | SD     10-5-3 |
 +---------------+
-          `;
+          `,
+          };
         },
       }),
     },

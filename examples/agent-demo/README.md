@@ -10,6 +10,7 @@ Set the following environment variables:
 
 - `PANGEA_VAULT_TOKEN`: Pangea Vault API token from the MCP Sensor Config page.
 - `PANGEA_VAULT_ITEM_ID`: Pangea Vault item ID from the MCP Sensor Config page.
+- `PANGEA_AIDR_TOKEN`: Pangea API token from the Application Sensor Config page.
 - `AWS_ACCESS_KEY_ID`: AWS access key for Bedrock usage.
 - `AWS_SECRET_ACCESS_KEY`: Secret key associated with the AWS access key.
 
