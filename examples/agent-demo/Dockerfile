@@ -25,4 +25,4 @@ ENV NODE_ENV=production
 COPY --from=build /prod/agent-demo /prod/agent-demo
 WORKDIR /prod/agent-demo
 
-ENTRYPOINT ["node", "--experimental-loader=@opentelemetry/instrumentation/hook.mjs", "--import", "./dist/telemetry.js", "/prod/agent-demo/dist/client.js"]
+ENTRYPOINT ["node", "/prod/agent-demo/dist/client.js"]
