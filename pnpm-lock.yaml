@@ -41,8 +41,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       ultracite:
-        specifier: 5.0.23
-        version: 5.0.23(@types/node@22.15.33)
+        specifier: 5.0.25
+        version: 5.0.25(@types/node@22.15.33)
 
   examples/agent-demo:
     dependencies:
@@ -2909,8 +2909,8 @@ packages:
   ufo@1.6.1:
     resolution: {integrity: sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==}
 
-  ultracite@5.0.23:
-    resolution: {integrity: sha512-y3xuxw0Z/2aiewh2dzn6mFgQ8bpn0TLCE79rsoN2zyfE+qlbdZlpECbDvf4QPOPRUQKvexj5I72IwIDlVdDYvA==}
+  ultracite@5.0.25:
+    resolution: {integrity: sha512-IWIHQvPRxIf+7+YEt9pDmCV60w9baCswWvRhoP8SQwJaJUFC9OF5fBfGBdMhv6lpdIJfgyCDj7H7uEcnT4QxRw==}
     hasBin: true
 
   undici-types@6.21.0:
@@ -6681,7 +6681,7 @@ snapshots:
 
   ufo@1.6.1: {}
 
-  ultracite@5.0.23(@types/node@22.15.33):
+  ultracite@5.0.25(@types/node@22.15.33):
     dependencies:
       '@clack/prompts': 0.11.0
       commander: 14.0.0
