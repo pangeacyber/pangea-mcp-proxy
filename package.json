@@ -31,7 +31,7 @@
     "pangea-node-sdk": "5.2.0-beta.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.5",
+    "@biomejs/biome": "2.0.6",
     "@tsconfig/node22": "22.0.2",
     "@types/node": "22.15.33",
     "lefthook": "1.11.14",
