@@ -11,6 +11,8 @@ import { defineCommand, runMain } from 'citty';
 import consola from 'consola';
 import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
 
+const APP_NAME = 'My AI Agent';
+
 dotenv.config({ ignore: ['MISSING_ENV_FILE'], overload: true, quiet: true });
 
 function mcpProxy(args: readonly string[]) {
@@ -21,7 +23,7 @@ function mcpProxy(args: readonly string[]) {
       PANGEA_VAULT_TOKEN: process.env.PANGEA_VAULT_TOKEN!,
       PANGEA_VAULT_ITEM_ID: process.env.PANGEA_VAULT_ITEM_ID!,
       PANGEA_BASE_URL_TEMPLATE: process.env.PANGEA_BASE_URL_TEMPLATE!,
-      APP_NAME: 'My AI Agent',
+      APP_NAME,
     },
   };
 }
@@ -127,6 +129,7 @@ const main = defineCommand({
         },
       ],
       recipe: 'pangea_prompt_guard',
+      app_name: APP_NAME,
     });
 
     if (!guardedInput.success) {
@@ -155,6 +158,7 @@ const main = defineCommand({
         },
       ],
       recipe: 'pangea_llm_response_guard',
+      app_name: APP_NAME,
     });
 
     if (!guardedOutput.success) {

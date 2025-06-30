@@ -29,7 +29,7 @@ pnpm run build
 Then the agent can be invoked like so:
 
 ```bash
-node ./dist/client.js
+node --experimental-loader=@opentelemetry/instrumentation/hook.mjs --import ./dist/telemetry.js ./dist/client.js
 ```
 
 ### OTEL
