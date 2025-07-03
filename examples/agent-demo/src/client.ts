@@ -132,6 +132,7 @@ const main = defineCommand({
       body: { role: 'system', content: SYSTEM_PROMPT },
       attributes: {
         'event.name': 'gen_ai.system.message',
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
       },
@@ -143,6 +144,7 @@ const main = defineCommand({
       body: { role: 'user', content: args.input },
       attributes: {
         'event.name': 'gen_ai.user.message',
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
       },
@@ -192,6 +194,7 @@ const main = defineCommand({
       body: { role: 'assistant', content: result.text },
       attributes: {
         'event.name': 'gen_ai.assistant.message',
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
         'gen_ai.response.id': result.response.id,
