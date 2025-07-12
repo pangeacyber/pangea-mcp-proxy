@@ -8,7 +8,7 @@
     "build": "tsup",
     "typecheck": "tsc --noEmit"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.842.0",
     "@dotenvx/dotenvx": "^1.46.0",
