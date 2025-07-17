@@ -56,14 +56,14 @@ importers:
         specifier: 1.47.4
         version: 1.47.4
       '@mastra/core':
-        specifier: 0.10.11
-        version: 0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
+        specifier: 0.10.14
+        version: 0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
       '@mastra/loggers':
         specifier: 0.10.3
-        version: 0.10.3(@mastra/core@0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))
+        version: 0.10.3(@mastra/core@0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))
       '@mastra/mcp':
         specifier: 0.10.6
-        version: 0.10.6(@mastra/core@0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)
+        version: 0.10.6(@mastra/core@0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)
       '@modelcontextprotocol/sdk':
         specifier: 1.15.0
         version: 1.15.0
@@ -691,8 +691,8 @@ packages:
   '@jsdevtools/ono@7.1.3':
     resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
 
-  '@mastra/core@0.10.11':
-    resolution: {integrity: sha512-AbhMsgxEXjSVNSbWHTYD/xewf+PogUg5X/YUkB5w1zMGFUgaxMRDvKgCr2RG0DS/3A9JbfHD3yAx5jyA3pIBqg==}
+  '@mastra/core@0.10.14':
+    resolution: {integrity: sha512-CKj6cX9p2gZFP/6SzWVn7M/0czJqUfjmYtsUABpIKuTXhXaQohvikbyul61V+Zi1JYfma438J7ZfhPH3gVI91A==}
     engines: {node: '>=20'}
     peerDependencies:
       zod: ^3.0.0
@@ -4266,7 +4266,7 @@ snapshots:
 
   '@jsdevtools/ono@7.1.3': {}
 
-  '@mastra/core@0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)':
+  '@mastra/core@0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.8(zod@3.25.76)
@@ -4319,16 +4319,16 @@ snapshots:
       - valibot
       - zod-openapi
 
-  '@mastra/loggers@0.10.3(@mastra/core@0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))':
+  '@mastra/loggers@0.10.3(@mastra/core@0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))':
     dependencies:
-      '@mastra/core': 0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
+      '@mastra/core': 0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
       pino: 9.7.0
       pino-pretty: 13.0.0
 
-  '@mastra/mcp@0.10.6(@mastra/core@0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)':
+  '@mastra/mcp@0.10.6(@mastra/core@0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.1.0
-      '@mastra/core': 0.10.11(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
+      '@mastra/core': 0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
       '@modelcontextprotocol/sdk': 1.15.0
       date-fns: 4.1.0
       exit-hook: 4.0.0
