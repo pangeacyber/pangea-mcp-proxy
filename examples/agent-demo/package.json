@@ -23,7 +23,7 @@
     "citty": "0.1.6",
     "consola": "3.4.2",
     "pangea-node-sdk": "5.2.0-beta.3",
-    "zod": "3.25.76"
+    "zod": "4.0.5"
   },
   "devDependencies": {
     "@tsconfig/node22": "22.0.2",
