@@ -53,8 +53,8 @@ importers:
         specifier: 1.3.23
         version: 1.3.23(zod@3.25.76)
       '@dotenvx/dotenvx':
-        specifier: 1.47.4
-        version: 1.47.4
+        specifier: 1.47.5
+        version: 1.47.5
       '@mastra/core':
         specifier: 0.10.14
         version: 0.10.14(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
@@ -108,8 +108,8 @@ importers:
         specifier: ^3.844.0
         version: 3.844.0
       '@dotenvx/dotenvx':
-        specifier: ^1.47.4
-        version: 1.47.4
+        specifier: ^1.47.5
+        version: 1.47.5
       '@modelcontextprotocol/sdk':
         specifier: ^1.15.1
         version: 1.15.1
@@ -494,8 +494,8 @@ packages:
   '@clack/prompts@0.11.0':
     resolution: {integrity: sha512-pMN5FcrEw9hUkZA4f+zLlzivQSeQf5dRGJjSUbvVYDLvpKCdQx5OaknvKzgbtXOizhP+SJJJjqEbOe55uKKfAw==}
 
-  '@dotenvx/dotenvx@1.47.4':
-    resolution: {integrity: sha512-s1Ee8fv089U3fuktNkIaD1DMFznFWZMBXCEH+YOiZT2WOqqdf7/E/SNFaG+z0+ZFPe2wyq8bdLqMrJXQCd8V/A==}
+  '@dotenvx/dotenvx@1.47.5':
+    resolution: {integrity: sha512-FtDgJyqOXmkj+BTU0qcE4Iq2HKjrEH6ZhRMc7m8fmOwstf1Ms9/9lbLNzyiNqyQrEnVr38W8PTTWMbDB3IX5og==}
     hasBin: true
 
   '@ecies/ciphers@0.2.3':
@@ -4178,7 +4178,7 @@ snapshots:
       picocolors: 1.1.1
       sisteransi: 1.0.5
 
-  '@dotenvx/dotenvx@1.47.4':
+  '@dotenvx/dotenvx@1.47.5':
     dependencies:
       commander: 11.1.0
       dotenv: 16.6.1
