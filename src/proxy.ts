@@ -170,6 +170,7 @@ const main = defineCommand({
           ],
           recipe: 'pangea_agent_pre_tool_guard',
           app_name: process.env.APP_NAME,
+          sensor_mode: 'input',
           context: { tool_name: args.params.name },
         });
 
@@ -210,6 +211,7 @@ const main = defineCommand({
             ],
             recipe: 'pangea_agent_post_tool_guard',
             app_name: process.env.APP_NAME,
+            sensor_mode: 'output',
             context: { tool_name: args.params.name },
           });
 

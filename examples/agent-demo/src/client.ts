@@ -172,6 +172,7 @@ const main = defineCommand({
       ],
       recipe: 'pangea_prompt_guard',
       app_name: APP_NAME,
+      sensor_mode: 'input',
     });
 
     if (!guardedInput.success) {
@@ -222,6 +223,7 @@ const main = defineCommand({
       ],
       recipe: 'pangea_llm_response_guard',
       app_name: APP_NAME,
+      sensor_mode: 'output',
     });
 
     if (!guardedOutput.success) {
