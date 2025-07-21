@@ -17,7 +17,8 @@ import { defineCommand, runMain } from 'citty';
 import consola from 'consola';
 import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
 
-const APP_ID = 'My AI Agent';
+const APP_ID = 'my-ai-agent';
+const APP_NAME = 'My AI Agent';
 const SYSTEM_PROMPT = `Today is ${new Date().toISOString().split('T')[0]}. Use the provided tools to prepare a morning report for the user.`;
 
 dotenv.config({ ignore: ['MISSING_ENV_FILE'], overload: true, quiet: true });
@@ -38,6 +39,7 @@ function mcpProxy(args: readonly string[]) {
       PANGEA_VAULT_ITEM_ID: process.env.PANGEA_VAULT_ITEM_ID!,
       PANGEA_BASE_URL_TEMPLATE: process.env.PANGEA_BASE_URL_TEMPLATE!,
       APP_ID,
+      APP_NAME,
     },
   };
 }
@@ -132,7 +134,7 @@ const main = defineCommand({
       body: { role: 'system', content: SYSTEM_PROMPT },
       attributes: {
         'event.name': 'gen_ai.system.message',
-        'service.name': APP_ID,
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
       },
@@ -144,7 +146,7 @@ const main = defineCommand({
       body: { role: 'user', content: args.input },
       attributes: {
         'event.name': 'gen_ai.user.message',
-        'service.name': APP_ID,
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
       },
@@ -175,6 +177,7 @@ const main = defineCommand({
       recipe: 'pangea_prompt_guard',
       app_id: APP_ID,
       sensor_mode: 'input',
+      extra_info: { app_name: APP_NAME },
     });
 
     if (!guardedInput.success) {
@@ -197,7 +200,7 @@ const main = defineCommand({
       body: { role: 'assistant', content: result.text },
       attributes: {
         'event.name': 'gen_ai.assistant.message',
-        'service.name': APP_ID,
+        'service.name': APP_NAME,
         'gen_ai.system': args.provider === 'openai' ? 'openai' : 'aws.bedrock',
         'gen_ai.request.model': args.model,
         'gen_ai.response.id': result.response.id,
@@ -228,6 +231,7 @@ const main = defineCommand({
       recipe: 'pangea_llm_response_guard',
       app_id: APP_ID,
       sensor_mode: 'output',
+      extra_info: { app_name: APP_NAME },
     });
 
     if (!guardedOutput.success) {
@@ -260,7 +264,9 @@ const main = defineCommand({
         ],
       },
       recipe: 'pangea_prompt_guard',
+      sensor_mode: 'input',
       app_id: APP_ID,
+      extra_info: { app_name: APP_NAME },
     });
 
     abortController.abort();
