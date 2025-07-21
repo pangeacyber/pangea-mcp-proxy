@@ -10,8 +10,8 @@ importers:
   .:
     dependencies:
       '@modelcontextprotocol/sdk':
-        specifier: ^1.15.1
-        version: 1.15.1
+        specifier: ^1.16.0
+        version: 1.16.0
       citty:
         specifier: ^0.1.6
         version: 0.1.6
@@ -65,8 +65,8 @@ importers:
         specifier: 0.10.6
         version: 0.10.6(@mastra/core@0.10.15(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)
       '@modelcontextprotocol/sdk':
-        specifier: 1.15.1
-        version: 1.15.1
+        specifier: 1.16.0
+        version: 1.16.0
       '@opentelemetry/api-logs':
         specifier: 0.203.0
         version: 0.203.0
@@ -111,8 +111,8 @@ importers:
         specifier: ^1.48.0
         version: 1.48.0
       '@modelcontextprotocol/sdk':
-        specifier: ^1.15.1
-        version: 1.15.1
+        specifier: ^1.16.0
+        version: 1.16.0
       citty:
         specifier: ^0.1.6
         version: 0.1.6
@@ -595,8 +595,8 @@ packages:
       ai: ^4.0.0
       zod: ^3.0.0
 
-  '@modelcontextprotocol/sdk@1.15.1':
-    resolution: {integrity: sha512-W/XlN9c528yYn+9MQkVjxiTPgPxoxt+oczfjHBDsJx0+59+O7B75Zhsp0B16Xbwbz8ANISDajh6+V7nIcPMc5w==}
+  '@modelcontextprotocol/sdk@1.16.0':
+    resolution: {integrity: sha512-8ofX7gkZcLj9H9rSd50mCgm3SSF8C7XoclxJuLoV0Cz3rEQ1tv9MZRYYvJtm9n1BiEQQMzSmE/w2AEkNacLYfg==}
     engines: {node: '>=18'}
 
   '@noble/ciphers@1.3.0':
@@ -3658,7 +3658,7 @@ snapshots:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.1.0
       '@mastra/core': 0.10.15(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.15.1
+      '@modelcontextprotocol/sdk': 1.16.0
       date-fns: 4.1.0
       exit-hook: 4.0.0
       fast-deep-equal: 3.1.3
@@ -3676,7 +3676,7 @@ snapshots:
       zod-from-json-schema: 0.0.5
       zod-to-json-schema: 3.24.5(zod@3.25.76)
 
-  '@modelcontextprotocol/sdk@1.15.1':
+  '@modelcontextprotocol/sdk@1.16.0':
     dependencies:
       ajv: 6.12.6
       content-type: 1.0.5
