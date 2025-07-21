@@ -177,7 +177,8 @@ const main = defineCommand({
       recipe: 'pangea_prompt_guard',
       app_id: APP_ID,
       sensor_mode: 'input',
-      extra_info: { app_name: APP_NAME },
+      // TODO: uncomment when `extra_info` is live.
+      // extra_info: { app_name: APP_NAME },
     });
 
     if (!guardedInput.success) {
@@ -231,7 +232,8 @@ const main = defineCommand({
       recipe: 'pangea_llm_response_guard',
       app_id: APP_ID,
       sensor_mode: 'output',
-      extra_info: { app_name: APP_NAME },
+      // TODO: uncomment when `extra_info` is live.
+      // extra_info: { app_name: APP_NAME },
     });
 
     if (!guardedOutput.success) {
@@ -266,7 +268,8 @@ const main = defineCommand({
       recipe: 'pangea_prompt_guard',
       sensor_mode: 'input',
       app_id: APP_ID,
-      extra_info: { app_name: APP_NAME },
+      // TODO: uncomment when `extra_info` is live.
+      // extra_info: { app_name: APP_NAME },
     });
 
     abortController.abort();
