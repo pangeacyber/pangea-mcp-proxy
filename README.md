@@ -99,9 +99,9 @@ servers:
 }
 ```
 
-### App name
+### App ID
 
-To identify the calling app in Pangea, set the `APP_NAME` environment variable.
+To identify the calling app in Pangea, set the `APP_ID` environment variable.
 
 ### Custom Pangea base URL
 

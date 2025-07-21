@@ -130,17 +130,19 @@ const main = defineCommand({
         const response = await client.listTools(args.params);
         const { tools } = response;
         const guardedToolsList = await aiGuard.guard({
-          messages: [
-            {
-              role: 'user',
-              content: tools
-                .map(
-                  (tool) =>
-                    `Tool: ${tool.name}\nDescription: ${tool.description}\n`
-                )
-                .join('\n'),
-            },
-          ],
+          input: {
+            messages: [
+              {
+                role: 'user',
+                content: tools
+                  .map(
+                    (tool) =>
+                      `Tool: ${tool.name}\nDescription: ${tool.description}\n`
+                  )
+                  .join('\n'),
+              },
+            ],
+          },
           overrides: {
             ignore_recipe: true,
             prompt_injection: {
@@ -148,7 +150,7 @@ const main = defineCommand({
               disabled: false,
             },
           },
-          app_name: process.env.APP_NAME,
+          app_id: process.env.APP_ID,
         });
 
         if (!guardedToolsList.success) {
@@ -162,16 +164,18 @@ const main = defineCommand({
 
       server.setRequestHandler(CallToolRequestSchema, async (args) => {
         const guardedInput = await aiGuard.guard({
-          messages: [
-            {
-              role: 'user',
-              content: JSON.stringify(args.params.arguments),
-            },
-          ],
+          input: {
+            messages: [
+              {
+                role: 'user',
+                content: JSON.stringify(args.params.arguments),
+              },
+            ],
+          },
           recipe: 'pangea_agent_pre_tool_guard',
-          app_name: process.env.APP_NAME,
+          app_id: process.env.APP_ID,
           sensor_mode: 'input',
-          context: { tool_name: args.params.name },
+          extra_info: { tool_name: args.params.name },
         });
 
         if (!guardedInput.success) {
@@ -203,16 +207,18 @@ const main = defineCommand({
 
         for (const contentItem of content.filter((c) => c.type === 'text')) {
           const guardedOutput = await aiGuard.guard({
-            messages: [
-              {
-                role: 'user',
-                content: contentItem.text,
-              },
-            ],
+            input: {
+              messages: [
+                {
+                  role: 'user',
+                  content: contentItem.text,
+                },
+              ],
+            },
             recipe: 'pangea_agent_post_tool_guard',
-            app_name: process.env.APP_NAME,
+            app_id: process.env.APP_ID,
             sensor_mode: 'output',
-            context: { tool_name: args.params.name },
+            extra_info: { tool_name: args.params.name },
           });
 
           if (!guardedOutput.success) {
