@@ -1,6 +1,6 @@
 {
   "name": "@pangeacyber/mcp-proxy",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Protect any MCP server from malicious entities and confidential PII.",
   "publishConfig": {
     "access": "public"
