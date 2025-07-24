@@ -151,8 +151,7 @@ const main = defineCommand({
             },
           },
           app_id: process.env.APP_ID,
-          // TODO: uncomment when `extra_info` is live.
-          // extra_info: { app_name: process.env.APP_NAME },
+          extra_info: { app_name: process.env.APP_NAME },
         });
 
         if (!guardedToolsList.success) {
@@ -177,11 +176,10 @@ const main = defineCommand({
           recipe: 'pangea_agent_pre_tool_guard',
           app_id: process.env.APP_ID,
           sensor_mode: 'input',
-          // TODO: uncomment when `extra_info` is live.
-          // extra_info: {
-          //   app_name: process.env.APP_NAME,
-          //   tool_name: args.params.name,
-          // },
+          extra_info: {
+            app_name: process.env.APP_NAME,
+            tool_name: args.params.name,
+          },
         });
 
         if (!guardedInput.success) {
@@ -224,11 +222,10 @@ const main = defineCommand({
             recipe: 'pangea_agent_post_tool_guard',
             app_id: process.env.APP_ID,
             sensor_mode: 'output',
-            // TODO: uncomment when `extra_info` is live.
-            // extra_info: {
-            //   app_name: process.env.APP_NAME,
-            //   tool_name: args.params.name,
-            // },
+            extra_info: {
+              app_name: process.env.APP_NAME,
+              tool_name: args.params.name,
+            },
           });
 
           if (!guardedOutput.success) {
