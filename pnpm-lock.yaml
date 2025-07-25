@@ -19,8 +19,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.3.0-beta.1
-        version: 5.3.0-beta.1
+        specifier: 5.3.0-beta.2
+        version: 5.3.0-beta.2
     devDependencies:
       '@biomejs/biome':
         specifier: 2.1.2
@@ -83,8 +83,8 @@ importers:
         specifier: 3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.3.0-beta.1
-        version: 5.3.0-beta.1
+        specifier: 5.3.0-beta.2
+        version: 5.3.0-beta.2
       zod:
         specifier: 3.25.76
         version: 3.25.76
@@ -2311,8 +2311,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pangea-node-sdk@5.3.0-beta.1:
-    resolution: {integrity: sha512-ekn7CpTD9Srw9O9+83MuVETTWPJmSu6UJG/+62axzjufaClWlLTIGv4pYc7JHMnG18bQkFdcCBFv4Kg2WS3Dtw==}
+  pangea-node-sdk@5.3.0-beta.2:
+    resolution: {integrity: sha512-xuVGz1ufAoj6TqUvdSizW7pZ7fl6NXT9gq+iWO28m9pWhBM4tUKLipO/h/syvfAe6DjlWWR4fLbWeQH0mX6HdA==}
     engines: {node: 20 || >=22}
 
   parseurl@1.3.3:
@@ -5586,7 +5586,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pangea-node-sdk@5.3.0-beta.1:
+  pangea-node-sdk@5.3.0-beta.2:
     dependencies:
       '@aws-crypto/crc32c': 5.2.0
       crypto-js: 4.2.0

@@ -145,7 +145,7 @@ const main = defineCommand({
           },
           overrides: {
             ignore_recipe: true,
-            prompt_injection: {
+            malicious_prompt: {
               action: 'block',
               disabled: false,
             },
@@ -175,7 +175,7 @@ const main = defineCommand({
           },
           recipe: 'pangea_agent_pre_tool_guard',
           app_id: process.env.APP_ID,
-          sensor_mode: 'input',
+          event_type: 'input',
           extra_info: {
             app_name: process.env.APP_NAME,
             tool_name: args.params.name,
@@ -187,7 +187,7 @@ const main = defineCommand({
         }
 
         if (guardedInput.result.blocked) {
-          const { prompt_messages, prompt_text, ...rest } = guardedInput.result;
+          const { output, ...rest } = guardedInput.result;
           return {
             content: [
               {
@@ -198,12 +198,16 @@ const main = defineCommand({
           };
         }
 
+        const newArgs: Record<string, unknown> = guardedInput.result.transformed
+          ? JSON.parse(
+              (guardedInput.result.output?.messages as { content: string }[])[0]
+                .content ?? '{}'
+            )
+          : args.params.arguments;
+
         const response = await client.callTool({
           ...args.params,
-          arguments: JSON.parse(
-            (guardedInput.result.prompt_messages?.[0] as { content: string })
-              ?.content ?? '{}'
-          ),
+          arguments: newArgs,
         });
         const { content } = response as {
           content: { type: string; text: string }[];
@@ -221,7 +225,7 @@ const main = defineCommand({
             },
             recipe: 'pangea_agent_post_tool_guard',
             app_id: process.env.APP_ID,
-            sensor_mode: 'output',
+            event_type: 'output',
             extra_info: {
               app_name: process.env.APP_NAME,
               tool_name: args.params.name,
@@ -233,8 +237,7 @@ const main = defineCommand({
           }
 
           if (guardedOutput.result.blocked) {
-            const { prompt_messages, prompt_text, ...rest } =
-              guardedOutput.result;
+            const { output, ...rest } = guardedOutput.result;
             return {
               content: [
                 {
@@ -245,9 +248,11 @@ const main = defineCommand({
             };
           }
 
-          contentItem.text = (
-            guardedOutput.result.prompt_messages?.[0] as { content: string }
-          )?.content;
+          if (guardedOutput.result.transformed) {
+            contentItem.text = (
+              guardedOutput.result.output?.messages as { content: string }[]
+            )[0].content;
+          }
         }
 
         return response;
