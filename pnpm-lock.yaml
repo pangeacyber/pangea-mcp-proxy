@@ -59,8 +59,8 @@ importers:
         specifier: 0.11.1
         version: 0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
       '@mastra/loggers':
-        specifier: 0.10.3
-        version: 0.10.3(@mastra/core@0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))
+        specifier: 0.10.4
+        version: 0.10.4(@mastra/core@0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))
       '@mastra/mcp':
         specifier: 0.10.6
         version: 0.10.6(@mastra/core@0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))(zod@3.25.76)
@@ -579,10 +579,10 @@ packages:
     peerDependencies:
       zod: ^3.0.0
 
-  '@mastra/loggers@0.10.3':
-    resolution: {integrity: sha512-71bAZlOVGbgrMpTYzFw+oOu0ljaDtJSBkAFM9xVTkiHn+K3AIYisJXxCLqMYiWzcIRyIoBQo1cINDXckLbhDAQ==}
+  '@mastra/loggers@0.10.4':
+    resolution: {integrity: sha512-AVrGeoS7gud2Wfl2KGAn8jofwoYFIzTKcySmgvfP8LdpEfOqlqKloAixIppVCGk0Uj411Th+EZyNlkzp1IsWiQ==}
     peerDependencies:
-      '@mastra/core': '>=0.10.4-0 <0.11.0'
+      '@mastra/core': '>=0.10.4-0 <0.12.0-0'
 
   '@mastra/mcp@0.10.6':
     resolution: {integrity: sha512-NB8ihMacWu+el4y0qMB1gcZ+vB6A8KMgDgTMqaOIWbx5NT8I6xNaSDn1JyjjeGvO1Wgljy5vaW35CfqxQhjIdA==}
@@ -2589,6 +2589,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   split-on-first@1.1.0:
     resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
@@ -3612,7 +3613,7 @@ snapshots:
       - valibot
       - zod-openapi
 
-  '@mastra/loggers@0.10.3(@mastra/core@0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))':
+  '@mastra/loggers@0.10.4(@mastra/core@0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76))':
     dependencies:
       '@mastra/core': 0.11.1(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.76)
       pino: 9.7.0
