@@ -29,8 +29,8 @@ importers:
         specifier: 22.0.2
         version: 22.0.2
       '@types/node':
-        specifier: 22.16.5
-        version: 22.16.5
+        specifier: 22.17.0
+        version: 22.17.0
       lefthook:
         specifier: 1.12.2
         version: 1.12.2
@@ -42,7 +42,7 @@ importers:
         version: 5.8.3
       ultracite:
         specifier: 5.1.2
-        version: 5.1.2(@types/node@22.16.5)(typescript@5.8.3)
+        version: 5.1.2(@types/node@22.17.0)(typescript@5.8.3)
 
   examples/agent-demo:
     dependencies:
@@ -93,8 +93,8 @@ importers:
         specifier: 22.0.2
         version: 22.0.2
       '@types/node':
-        specifier: 22.16.5
-        version: 22.16.5
+        specifier: 22.17.0
+        version: 22.17.0
       tsup:
         specifier: 8.5.0
         version: 8.5.0(postcss@8.5.6)(typescript@5.8.3)
@@ -127,8 +127,8 @@ importers:
         specifier: 22.0.2
         version: 22.0.2
       '@types/node':
-        specifier: 22.16.5
-        version: 22.16.5
+        specifier: 22.17.0
+        version: 22.17.0
       tsup:
         specifier: 8.5.0
         version: 8.5.0(postcss@8.5.6)(typescript@5.8.3)
@@ -1475,8 +1475,8 @@ packages:
   '@types/mysql@2.15.26':
     resolution: {integrity: sha512-DSLCOXhkvfS5WNNPbfn2KdICAmk8lLc+/PNvnPnF7gOdMZCxopXduqv0OQ13y/yA/zXTSikZZqVgybUxOEg6YQ==}
 
-  '@types/node@22.16.5':
-    resolution: {integrity: sha512-bJFoMATwIGaxxx8VJPeM8TonI8t579oRvgAuT8zFugJsJZgzqv0Fu8Mhp68iecjzG7cnN3mO2dJQ5uUM2EFrgQ==}
+  '@types/node@22.17.0':
+    resolution: {integrity: sha512-bbAKTCqX5aNVryi7qXVMi+OkB3w/OyblodicMbvE38blyAz7GxXf6XYhklokijuPwwVg9sDLKRxt0ZHXQwZVfQ==}
 
   '@types/omelette@0.4.5':
     resolution: {integrity: sha512-zUCJpVRwfMcZfkxSCGp73mgd3/xesvPz5tQJIORlfP/zkYEyp9KUfF7IP3RRjyZR3DwxkPs96/IFf70GmYZYHQ==}
@@ -4826,7 +4826,7 @@ snapshots:
 
   '@types/bunyan@1.8.11':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
   '@types/chai@5.2.2':
     dependencies:
@@ -4834,7 +4834,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
   '@types/deep-eql@4.0.2': {}
 
@@ -4846,13 +4846,13 @@ snapshots:
 
   '@types/memcached@2.2.10':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
   '@types/mysql@2.15.26':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
-  '@types/node@22.16.5':
+  '@types/node@22.17.0':
     dependencies:
       undici-types: 6.21.0
 
@@ -4860,7 +4860,7 @@ snapshots:
 
   '@types/oracledb@6.5.2':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
   '@types/pg-pool@2.0.6':
     dependencies:
@@ -4868,7 +4868,7 @@ snapshots:
 
   '@types/pg@8.6.1':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
       pg-protocol: 1.10.3
       pg-types: 2.2.0
 
@@ -4876,7 +4876,7 @@ snapshots:
 
   '@types/tedious@4.0.14':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
 
   '@types/uuid@9.0.8': {}
 
@@ -4888,13 +4888,13 @@ snapshots:
       chai: 5.2.1
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.2.4(vite@7.0.5(@types/node@22.16.5))':
+  '@vitest/mocker@3.2.4(vite@7.0.5(@types/node@22.17.0))':
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 7.0.5(@types/node@22.16.5)
+      vite: 7.0.5(@types/node@22.17.0)
 
   '@vitest/pretty-format@3.2.4':
     dependencies:
@@ -5753,7 +5753,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
       long: 5.3.2
 
   proxy-addr@2.0.7:
@@ -6099,13 +6099,13 @@ snapshots:
 
   ufo@1.6.1: {}
 
-  ultracite@5.1.2(@types/node@22.16.5)(typescript@5.8.3):
+  ultracite@5.1.2(@types/node@22.17.0)(typescript@5.8.3):
     dependencies:
       '@clack/prompts': 0.11.0
       deepmerge: 4.3.1
       jsonc-parser: 3.3.1
       trpc-cli: 0.10.2(typescript@5.8.3)
-      vitest: 3.2.4(@types/node@22.16.5)
+      vitest: 3.2.4(@types/node@22.17.0)
       zod: 4.0.13
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -6149,13 +6149,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@3.2.4(@types/node@22.16.5):
+  vite-node@3.2.4(@types/node@22.17.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.1
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.0.5(@types/node@22.16.5)
+      vite: 7.0.5(@types/node@22.17.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -6170,7 +6170,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite@7.0.5(@types/node@22.16.5):
+  vite@7.0.5(@types/node@22.17.0):
     dependencies:
       esbuild: 0.25.8
       fdir: 6.4.6(picomatch@4.0.3)
@@ -6179,14 +6179,14 @@ snapshots:
       rollup: 4.45.1
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
       fsevents: 2.3.3
 
-  vitest@3.2.4(@types/node@22.16.5):
+  vitest@3.2.4(@types/node@22.17.0):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(vite@7.0.5(@types/node@22.16.5))
+      '@vitest/mocker': 3.2.4(vite@7.0.5(@types/node@22.17.0))
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4
@@ -6204,11 +6204,11 @@ snapshots:
       tinyglobby: 0.2.14
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
-      vite: 7.0.5(@types/node@22.16.5)
-      vite-node: 3.2.4(@types/node@22.16.5)
+      vite: 7.0.5(@types/node@22.17.0)
+      vite-node: 3.2.4(@types/node@22.17.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.16.5
+      '@types/node': 22.17.0
     transitivePeerDependencies:
       - jiti
       - less
