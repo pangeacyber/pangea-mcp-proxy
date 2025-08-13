@@ -109,10 +109,7 @@ const main = defineCommand({
       instructions: SYSTEM_PROMPT,
       model:
         args.provider === 'openai'
-          ? createOpenAI({
-              baseURL: args.openaiBaseUrl,
-              compatibility: 'compatible',
-            })(args.model)
+          ? createOpenAI({ baseURL: args.openaiBaseUrl })(args.model)
           : createAmazonBedrock({ region: args.awsRegion })(args.model),
       tools: await mcp.getTools(),
     });
