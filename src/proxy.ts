@@ -130,7 +130,7 @@ const main = defineCommand({
         const response = await client.listTools(args.params);
         const { tools } = response;
         const guardedToolsList = await aiGuard.guard({
-          input: { tools },
+          input: { messages: [], tools },
           overrides: {
             ignore_recipe: true,
             malicious_prompt: {
