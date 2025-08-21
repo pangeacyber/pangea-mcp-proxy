@@ -183,6 +183,7 @@ const main = defineCommand({
                 text: `Input has been blocked by Pangea AI Guard.\n\n${JSON.stringify(rest, null, 2)}`,
               },
             ],
+            isError: true,
           };
         }
 
@@ -233,6 +234,7 @@ const main = defineCommand({
                   text: `Output has been blocked by Pangea AI Guard.\n\n${JSON.stringify(rest, null, 2)}`,
                 },
               ],
+              isError: true,
             };
           }
 
