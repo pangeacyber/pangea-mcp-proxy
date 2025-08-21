@@ -1,26 +1,9 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite"],
+  "extends": ["@kenan/biome-config"],
   "linter": {
     "rules": {
-      "complexity": {
-        "noExcessiveCognitiveComplexity": "off"
-      },
-      "correctness": {
-        "noUnusedVariables": {
-          "level": "error",
-          "options": {
-            "ignoreRestSiblings": true
-          }
-        }
-      },
-      "nursery": {
-        "noAwaitInLoop": "off",
-        "noShadow": "off"
-      },
-      "style": {
-        "noNonNullAssertion": "off"
-      }
+      "nursery": "off"
     }
   }
 }
