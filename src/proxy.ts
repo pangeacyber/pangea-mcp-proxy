@@ -6,6 +6,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
   CallToolRequestSchema,
+  type CallToolResult,
   CompleteRequestSchema,
   GetPromptRequestSchema,
   ListPromptsRequestSchema,
@@ -194,21 +195,20 @@ const main = defineCommand({
             )
           : args.params.arguments;
 
-        const response = await client.callTool({
+        const response = (await client.callTool({
           ...args.params,
           arguments: newArgs,
-        });
-        const { content } = response as {
-          content: { type: string; text: string }[];
-        };
+        })) as CallToolResult;
+        const { content, structuredContent } = response;
 
-        for (const contentItem of content.filter((c) => c.type === 'text')) {
+        if (structuredContent) {
+          // Process structuredContent from tools that return it
           const guardedOutput = await aiGuard.guard({
             input: {
               messages: [
                 {
                   role: 'tool',
-                  content: contentItem.text,
+                  content: JSON.stringify(structuredContent),
                 },
               ],
             },
@@ -239,9 +239,71 @@ const main = defineCommand({
           }
 
           if (guardedOutput.result.transformed) {
-            contentItem.text = (
+            const contentText = (
               guardedOutput.result.output?.messages as { content: string }[]
             )[0].content;
+
+            try {
+              response.structuredContent = JSON.parse(contentText);
+
+              response.content = [
+                {
+                  type: 'text',
+                  text: JSON.stringify(response.structuredContent),
+                },
+              ];
+            } catch {
+              response.content = [
+                {
+                  type: 'text',
+                  text: contentText,
+                },
+              ];
+            }
+          }
+        } else {
+          // Process text content from tools that don't return structuredContent
+          for (const contentItem of content.filter((c) => c.type === 'text')) {
+            const guardedOutput = await aiGuard.guard({
+              input: {
+                messages: [
+                  {
+                    role: 'tool',
+                    content: contentItem.text,
+                  },
+                ],
+              },
+              recipe: 'pangea_agent_post_tool_guard',
+              app_id: process.env.APP_ID,
+              event_type: 'output',
+              extra_info: {
+                app_name: process.env.APP_NAME,
+                tool_name: args.params.name,
+              },
+            });
+
+            if (!guardedOutput.success) {
+              throw new Error('Failed to guard output.');
+            }
+
+            if (guardedOutput.result.blocked) {
+              const { output, ...rest } = guardedOutput.result;
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: `Output has been blocked by Pangea AI Guard.\n\n${JSON.stringify(rest, null, 2)}`,
+                  },
+                ],
+                isError: true,
+              };
+            }
+
+            if (guardedOutput.result.transformed) {
+              contentItem.text = (
+                guardedOutput.result.output?.messages as { content: string }[]
+              )[0].content;
+            }
           }
         }
 
