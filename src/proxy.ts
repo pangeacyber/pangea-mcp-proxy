@@ -6,6 +6,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
   CallToolRequestSchema,
+  type CallToolResult,
   CompleteRequestSchema,
   GetPromptRequestSchema,
   ListPromptsRequestSchema,
@@ -194,14 +195,11 @@ const main = defineCommand({
             )
           : args.params.arguments;
 
-        const response = await client.callTool({
+        const response = (await client.callTool({
           ...args.params,
           arguments: newArgs,
-        });
-        const { content, structuredContent } = response as {
-          content: { type: string; text: string }[];
-          structuredContent?: object;
-        };
+        })) as CallToolResult;
+        const { content, structuredContent } = response;
 
         if (structuredContent) {
           // Process structuredContent from tools that return it
