@@ -9,10 +9,12 @@ import {
   type CallToolResult,
   CompleteRequestSchema,
   GetPromptRequestSchema,
+  type Implementation,
   ListPromptsRequestSchema,
   ListResourcesRequestSchema,
   ListResourceTemplatesRequestSchema,
   ListToolsRequestSchema,
+  type ListToolsResult,
   LoggingMessageNotificationSchema,
   ReadResourceRequestSchema,
   ResourceUpdatedNotificationSchema,
@@ -58,10 +60,7 @@ const main = defineCommand({
 
     const serverTransport = new StdioServerTransport();
     const serverCapabilities = client.getServerCapabilities();
-    const serverVersion = client.getServerVersion() as {
-      name: string;
-      version: string;
-    };
+    const serverVersion: Implementation = client.getServerVersion()!;
     const server = new Server(serverVersion, {
       capabilities: serverCapabilities,
     });
@@ -128,7 +127,7 @@ const main = defineCommand({
       );
 
       server.setRequestHandler(ListToolsRequestSchema, async (args) => {
-        const response = await client.listTools(args.params);
+        const response: ListToolsResult = await client.listTools(args.params);
         const { tools } = response;
         const guardedToolsList = await aiGuard.guard({
           input: { messages: [], tools },
@@ -140,7 +139,10 @@ const main = defineCommand({
             },
           },
           app_id: process.env.APP_ID,
-          extra_info: { app_name: process.env.APP_NAME },
+          extra_info: {
+            app_name: process.env.APP_NAME,
+            mcp_server_name: serverVersion.name,
+          },
         });
 
         if (!guardedToolsList.success) {
@@ -167,6 +169,7 @@ const main = defineCommand({
           event_type: 'input',
           extra_info: {
             app_name: process.env.APP_NAME,
+            mcp_server_name: serverVersion.name,
             tool_name: args.params.name,
           },
         });
@@ -217,6 +220,7 @@ const main = defineCommand({
             event_type: 'output',
             extra_info: {
               app_name: process.env.APP_NAME,
+              mcp_server_name: serverVersion.name,
               tool_name: args.params.name,
             },
           });
@@ -278,6 +282,7 @@ const main = defineCommand({
               event_type: 'output',
               extra_info: {
                 app_name: process.env.APP_NAME,
+                mcp_server_name: serverVersion.name,
                 tool_name: args.params.name,
               },
             });
