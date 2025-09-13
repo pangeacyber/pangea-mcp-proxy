@@ -191,11 +191,9 @@ const main = defineCommand({
     }
 
     const abortController = new AbortController();
-    const result = await agent.generateVNext(args.input, {
+    const result = await agent.generateLegacy(args.input, {
       abortSignal: abortController.signal,
-      modelSettings: {
-        temperature: 0.1,
-      },
+      temperature: 0.1,
     });
 
     // Log LLM response.
