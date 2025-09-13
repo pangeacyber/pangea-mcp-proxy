@@ -19,8 +19,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.3.0-beta.2
-        version: 5.3.0-beta.2
+        specifier: 5.4.0-beta.1
+        version: 5.4.0-beta.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.3
@@ -83,8 +83,8 @@ importers:
         specifier: 3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.3.0-beta.2
-        version: 5.3.0-beta.2
+        specifier: 5.4.0-beta.1
+        version: 5.4.0-beta.1
       zod:
         specifier: 3.25.76
         version: 3.25.76
@@ -1858,9 +1858,6 @@ packages:
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
 
-  err-code@2.0.3:
-    resolution: {integrity: sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA==}
-
   es-define-property@1.0.1:
     resolution: {integrity: sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==}
     engines: {node: '>= 0.4'}
@@ -2429,8 +2426,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pangea-node-sdk@5.3.0-beta.2:
-    resolution: {integrity: sha512-xuVGz1ufAoj6TqUvdSizW7pZ7fl6NXT9gq+iWO28m9pWhBM4tUKLipO/h/syvfAe6DjlWWR4fLbWeQH0mX6HdA==}
+  pangea-node-sdk@5.4.0-beta.1:
+    resolution: {integrity: sha512-4/2MHrRV2KgLrzfpr6jl2djUDiy7jQ4zeksz9DN6TapAEBRkD9fDa1F0quFt9H0d9yI0AE1nqUvGeR/Pr/8ZQw==}
     engines: {node: 20 || >=22}
 
   parseurl@1.3.3:
@@ -2537,10 +2534,6 @@ packages:
   process-warning@5.0.0:
     resolution: {integrity: sha512-a39t9ApHNx2L4+HBnQKqxxHNs1r7KF+Intd8Q/g1bUh6q0WIp9voPXJ/x0j+ZL45KF1pJd9+q2jLIRMfvEshkA==}
 
-  promise-retry@2.0.1:
-    resolution: {integrity: sha512-y+WKFlBR8BGXnsNlIHFGPZmyDf3DFMoLhaflAnyZgV6rG6xu+JwesTo2Q9R6XwYmtmwAFCkAk3e35jEdoeh/3g==}
-    engines: {node: '>=10'}
-
   proper-url-join@2.1.2:
     resolution: {integrity: sha512-wp0MVpPYbQhwxRFjFkhWwHUoH5PyAA0SCVUpwRxjc9JzSzddPB4GDhu5I+eCYhdpG0S7jvVubsLPEi4pFd77rg==}
 
@@ -2618,10 +2611,6 @@ packages:
     resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
     engines: {node: '>= 0.4'}
     hasBin: true
-
-  retry@0.12.0:
-    resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
-    engines: {node: '>= 4'}
 
   rollup@4.50.1:
     resolution: {integrity: sha512-78E9voJHwnXQMiQdiqswVLZwJIzdBKJ1GdI5Zx6XwoFKUIk09/sSrr+05QFzvYb8q6Y9pPV45zzDuYa3907TZA==}
@@ -5225,8 +5214,6 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  err-code@2.0.3: {}
-
   es-define-property@1.0.1: {}
 
   es-errors@1.3.0: {}
@@ -5771,7 +5758,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pangea-node-sdk@5.3.0-beta.2:
+  pangea-node-sdk@5.4.0-beta.1:
     dependencies:
       '@aws-crypto/crc32c': 5.2.0
       crypto-js: 4.2.0
@@ -5780,7 +5767,6 @@ snapshots:
       json-canon: 1.0.1
       merkle-tools: 1.4.1
       neoqs: 6.13.0
-      promise-retry: 2.0.1
       proper-url-join: 2.1.2
 
   parseurl@1.3.3: {}
@@ -5878,11 +5864,6 @@ snapshots:
 
   process-warning@5.0.0: {}
 
-  promise-retry@2.0.1:
-    dependencies:
-      err-code: 2.0.3
-      retry: 0.12.0
-
   proper-url-join@2.1.2:
     dependencies:
       query-string: 7.1.3
@@ -5972,8 +5953,6 @@ snapshots:
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-
-  retry@0.12.0: {}
 
   rollup@4.50.1:
     dependencies:
