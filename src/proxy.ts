@@ -139,6 +139,7 @@ const main = defineCommand({
             },
           },
           app_id: process.env.APP_ID,
+          event_type: 'tool_listing',
           extra_info: {
             app_name: process.env.APP_NAME,
             mcp_server_name: serverVersion.name,
@@ -166,7 +167,7 @@ const main = defineCommand({
           },
           recipe: 'pangea_agent_pre_tool_guard',
           app_id: process.env.APP_ID,
-          event_type: 'input',
+          event_type: 'tool_input',
           extra_info: {
             app_name: process.env.APP_NAME,
             mcp_server_name: serverVersion.name,
@@ -217,7 +218,7 @@ const main = defineCommand({
             },
             recipe: 'pangea_agent_post_tool_guard',
             app_id: process.env.APP_ID,
-            event_type: 'output',
+            event_type: 'tool_output',
             extra_info: {
               app_name: process.env.APP_NAME,
               mcp_server_name: serverVersion.name,
@@ -279,7 +280,7 @@ const main = defineCommand({
               },
               recipe: 'pangea_agent_post_tool_guard',
               app_id: process.env.APP_ID,
-              event_type: 'output',
+              event_type: 'tool_output',
               extra_info: {
                 app_name: process.env.APP_NAME,
                 mcp_server_name: serverVersion.name,
