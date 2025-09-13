@@ -177,6 +177,8 @@ const main = defineCommand({
       recipe: 'pangea_prompt_guard',
       app_id: APP_ID,
       event_type: 'input',
+      llm_provider: args.provider,
+      model: args.model,
       extra_info: { app_name: APP_NAME },
     });
 
@@ -231,6 +233,8 @@ const main = defineCommand({
       recipe: 'pangea_llm_response_guard',
       app_id: APP_ID,
       event_type: 'output',
+      llm_provider: args.provider,
+      model: args.model,
       extra_info: { app_name: APP_NAME },
     });
 
@@ -264,8 +268,10 @@ const main = defineCommand({
         ],
       },
       recipe: 'pangea_prompt_guard',
-      event_type: 'input',
       app_id: APP_ID,
+      event_type: 'input',
+      llm_provider: args.provider,
+      model: args.model,
       extra_info: { app_name: APP_NAME },
     });
 
