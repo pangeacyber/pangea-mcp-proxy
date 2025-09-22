@@ -53,8 +53,8 @@ importers:
         specifier: 1.3.24
         version: 1.3.24(zod@3.25.76)
       '@dotenvx/dotenvx':
-        specifier: 1.49.0
-        version: 1.49.0
+        specifier: 1.50.1
+        version: 1.50.1
       '@mastra/core':
         specifier: 0.16.3
         version: 0.16.3(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76)
@@ -108,8 +108,8 @@ importers:
         specifier: ^3.891.0
         version: 3.893.0
       '@dotenvx/dotenvx':
-        specifier: ^1.49.0
-        version: 1.49.0
+        specifier: ^1.50.1
+        version: 1.50.1
       '@modelcontextprotocol/sdk':
         specifier: ^1.18.1
         version: 1.18.1
@@ -409,8 +409,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@dotenvx/dotenvx@1.49.0':
-    resolution: {integrity: sha512-M1cyP6YstFQCjih54SAxCqHLMMi8QqV8tenpgGE48RTXWD7vfMYJiw/6xcCDpS2h28AcLpTsFCZA863Ge9yxzA==}
+  '@dotenvx/dotenvx@1.50.1':
+    resolution: {integrity: sha512-0hymEluMsQwwukPcnF7IjhmgA6j2jaZtfOtFafOgeZi24BJHY1lHlqwD7dO46KF9WCfpBB3J5uAEwlgBOzAAxg==}
     hasBin: true
 
   '@ecies/ciphers@0.2.4':
@@ -3503,7 +3503,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.2.4':
     optional: true
 
-  '@dotenvx/dotenvx@1.49.0':
+  '@dotenvx/dotenvx@1.50.1':
     dependencies:
       commander: 11.1.0
       dotenv: 17.2.2
