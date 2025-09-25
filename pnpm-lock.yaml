@@ -105,7 +105,7 @@ importers:
   examples/filesystem:
     dependencies:
       '@aws-sdk/client-bedrock-runtime':
-        specifier: ^3.891.0
+        specifier: ^3.893.0
         version: 3.893.0
       '@dotenvx/dotenvx':
         specifier: ^1.50.1
