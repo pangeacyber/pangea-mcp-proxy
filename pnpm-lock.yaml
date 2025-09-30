@@ -59,8 +59,8 @@ importers:
         specifier: 0.17.1
         version: 0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76)
       '@mastra/loggers':
-        specifier: 0.10.12
-        version: 0.10.12(@mastra/core@0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76))
+        specifier: 0.10.13
+        version: 0.10.13(@mastra/core@0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76))
       '@mastra/mcp':
         specifier: 0.13.0
         version: 0.13.0(@mastra/core@0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
@@ -608,10 +608,10 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  '@mastra/loggers@0.10.12':
-    resolution: {integrity: sha512-0iqjsnOyBuZm4qY6aRm07dRJyUIt1E0VtQTsswPueV6nlqEj9vxdM/mDVSgaYzNC6OH8lnE96Dwy23bzHjsbQQ==}
+  '@mastra/loggers@0.10.13':
+    resolution: {integrity: sha512-78JUoUkBg3CTqZGWkv+69hFMyug3DaOsOqCYW3DlVlagpvEIWQU82HE22JdM/mZIIpiDZQfwaM9ar3IcApXlPw==}
     peerDependencies:
-      '@mastra/core': '>=0.17.0-0 <0.18.0-0'
+      '@mastra/core': '>=0.17.0-0 <0.19.0-0'
 
   '@mastra/mcp@0.13.0':
     resolution: {integrity: sha512-DYChXrvklDt+SvTAMEIXhn8P0Z45WIndZ3D4xCCnQtsGU8rdaGDtlm0BIqgMrHsGlsSptJVLrUU+gb7yJifXKg==}
@@ -3668,7 +3668,7 @@ snapshots:
       - valibot
       - zod-openapi
 
-  '@mastra/loggers@0.10.12(@mastra/core@0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76))':
+  '@mastra/loggers@0.10.13(@mastra/core@0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76))':
     dependencies:
       '@mastra/core': 0.17.1(openapi-types@12.1.3)(react@19.1.1)(zod@3.25.76)
       pino: 9.11.0
