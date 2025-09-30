@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "pnpm run build"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.1",
     "citty": "^0.1.6",
