@@ -19,8 +19,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.4.0-beta.1
-        version: 5.4.0-beta.1
+        specifier: 5.6.0
+        version: 5.6.0
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.4
@@ -83,8 +83,8 @@ importers:
         specifier: 3.4.2
         version: 3.4.2
       pangea-node-sdk:
-        specifier: 5.4.0-beta.1
-        version: 5.4.0-beta.1
+        specifier: 5.6.0
+        version: 5.6.0
       zod:
         specifier: 3.25.76
         version: 3.25.76
@@ -2409,9 +2409,6 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  neoqs@6.13.0:
-    resolution: {integrity: sha512-IysBpjrEG9qiUb/IT6XrXSz2ASzBxLebp4s8/GBm7STYC315vMNqH0aWdRR+f7KvXK4aRlLcf5r2Z6dOTxQSrQ==}
-
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -2462,8 +2459,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pangea-node-sdk@5.4.0-beta.1:
-    resolution: {integrity: sha512-4/2MHrRV2KgLrzfpr6jl2djUDiy7jQ4zeksz9DN6TapAEBRkD9fDa1F0quFt9H0d9yI0AE1nqUvGeR/Pr/8ZQw==}
+  pangea-node-sdk@5.6.0:
+    resolution: {integrity: sha512-ZQq6HYAVqwCi74BR9q3O9syh281v//cy8Jfwn62NEXxHyF9MCZAk5SKF1rUslDyqa2Q14qWu2IDIvHzh2wLztQ==}
     engines: {node: 20 || >=22}
 
   parseurl@1.3.3:
@@ -5792,8 +5789,6 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  neoqs@6.13.0: {}
-
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -5828,7 +5823,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pangea-node-sdk@5.4.0-beta.1:
+  pangea-node-sdk@5.6.0:
     dependencies:
       '@aws-crypto/crc32c': 5.2.0
       crypto-js: 4.2.0
@@ -5836,7 +5831,6 @@ snapshots:
       formdata-node: 6.0.3
       json-canon: 1.0.1
       merkle-tools: 1.4.1
-      neoqs: 6.13.0
       proper-url-join: 2.1.2
 
   parseurl@1.3.3: {}
