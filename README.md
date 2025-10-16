@@ -45,8 +45,8 @@ In an existing stdio-based MCP server configuration like the following:
 }
 ```
 
-Wrap the original command with `npx -y @pangeacyber/mcp-proxy` and add an
-environment variable:
+Wrap the original command with `npx -y @pangeacyber/mcp-proxy` and add
+environment variables:
 
 ```json
 {
