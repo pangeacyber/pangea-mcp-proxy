@@ -15,7 +15,7 @@
     "@dotenvx/dotenvx": "1.51.0",
     "@mastra/core": "0.20.2",
     "@mastra/loggers": "0.10.16",
-    "@mastra/mcp": "0.13.4",
+    "@mastra/mcp": "0.13.5",
     "@modelcontextprotocol/sdk": "1.20.0",
     "@opentelemetry/api-logs": "0.206.0",
     "@opentelemetry/exporter-logs-otlp-grpc": "0.206.0",
