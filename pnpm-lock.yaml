@@ -105,7 +105,7 @@ importers:
   examples/filesystem:
     dependencies:
       '@aws-sdk/client-bedrock-runtime':
-        specifier: ^3.916.0
+        specifier: ^3.917.0
         version: 3.917.0
       '@dotenvx/dotenvx':
         specifier: ^1.51.0
@@ -295,6 +295,7 @@ packages:
   '@aws-sdk/credential-provider-web-identity@3.917.0':
     resolution: {integrity: sha512-pZncQhFbwW04pB0jcD5OFv3x2gAddDYCVxyJVixgyhSw7bKCYxqu6ramfq1NxyVpmm+qsw+ijwi/3cCmhUHF/A==}
     engines: {node: '>=18.0.0'}
+    deprecated: This version contains a compilation TypeScript error https://github.com/aws/aws-sdk-js-v3/issues/7457 - please use @aws-sdk/credential-providers@3.918.0 or higher
 
   '@aws-sdk/eventstream-handler-node@3.914.0':
     resolution: {integrity: sha512-S4Zf+N6xrfQk0Fox+eWftbSqlXh9DUPjuXSbFXwneP7yEJ0+KbbRFsci84MQapNKa5IPb+Kt/li5i7Zp9B4qIw==}
