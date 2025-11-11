@@ -62,8 +62,8 @@ importers:
         specifier: 0.10.18
         version: 0.10.18(@mastra/core@0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))
       '@mastra/mcp':
-        specifier: 0.14.1
-        version: 0.14.1(@mastra/core@0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
+        specifier: 0.14.2
+        version: 0.14.2(@mastra/core@0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
       '@modelcontextprotocol/sdk':
         specifier: 1.21.1
         version: 1.21.1
@@ -647,10 +647,10 @@ packages:
     peerDependencies:
       '@mastra/core': '>=0.18.1-0 <0.24.0-0'
 
-  '@mastra/mcp@0.14.1':
-    resolution: {integrity: sha512-cq3fNUXBejM6fMadNBhv/lxnU8cCn9UBKgtXJ5sxaHA/jujaWtWhBbJUt0u79hTrhYhtiTgNDNK9Xz41qA1vzA==}
+  '@mastra/mcp@0.14.2':
+    resolution: {integrity: sha512-qcKYvr4E2++9FuQJdAa/hh7O85qWrUBFtassQpCUKcWhn5DZbyDJzOn4aTcqK9UciADnVeorztC1t3XKxlIMFA==}
     peerDependencies:
-      '@mastra/core': '>=0.20.1-0 <0.24.0-0'
+      '@mastra/core': '>=0.20.1-0 <0.25.0-0'
       zod: ^3.25.0 || ^4.0.0
 
   '@mastra/schema-compat@0.11.5':
@@ -3791,7 +3791,7 @@ snapshots:
       pino: 9.14.0
       pino-pretty: 13.1.2
 
-  '@mastra/mcp@0.14.1(@mastra/core@0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)':
+  '@mastra/mcp@0.14.2(@mastra/core@0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.2.1(@types/json-schema@7.0.15)
       '@mastra/core': 0.23.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
