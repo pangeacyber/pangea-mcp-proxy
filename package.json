@@ -35,7 +35,7 @@
     "@kenan/biome-config": "1.0.6",
     "@tsconfig/node22": "22.0.2",
     "@types/node": "22.19.0",
-    "lefthook": "2.0.1",
+    "lefthook": "2.0.2",
     "tsup": "8.5.0",
     "typescript": "5.9.3"
   }
