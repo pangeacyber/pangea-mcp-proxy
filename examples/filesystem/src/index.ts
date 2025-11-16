@@ -105,7 +105,10 @@ const main = defineCommand({
 
       while (true) {
         const response = await converse(conversation);
-        conversation.push(response.output?.message!);
+        if (!response.output?.message) {
+          return;
+        }
+        conversation.push(response.output?.message);
 
         if (response.stopReason === 'tool_use') {
           const toolResults: ContentBlock.ToolResultMember[] = [];
