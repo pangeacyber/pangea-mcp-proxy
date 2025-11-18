@@ -317,9 +317,11 @@ const main = defineCommand({
       });
     }
 
-    server.setRequestHandler(CompleteRequestSchema, (args) =>
-      client.complete(args.params)
-    );
+    if (serverCapabilities?.completions) {
+      server.setRequestHandler(CompleteRequestSchema, (args) =>
+        client.complete(args.params)
+      );
+    }
 
     await server.connect(serverTransport);
   },
