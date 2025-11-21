@@ -20,7 +20,6 @@
     "@opentelemetry/api-logs": "0.208.0",
     "@opentelemetry/exporter-logs-otlp-grpc": "0.208.0",
     "@opentelemetry/sdk-logs": "0.208.0",
-    "ai": "5.0.94",
     "citty": "0.1.6",
     "consola": "3.4.2",
     "pangea-node-sdk": "5.6.0",

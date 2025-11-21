@@ -188,9 +188,11 @@ const main = defineCommand({
     }
 
     const abortController = new AbortController();
-    const result = await agent.generateLegacy(args.input, {
+    const result = await agent.generate(args.input, {
       abortSignal: abortController.signal,
-      temperature: 0.1,
+      modelSettings: {
+        temperature: 0.1,
+      },
     });
 
     // Log LLM response.
@@ -204,8 +206,8 @@ const main = defineCommand({
         'gen_ai.request.model': args.model,
         'gen_ai.response.id': result.response.id,
         'gen_ai.response.model': result.response.modelId,
-        'gen_ai.usage.output_tokens': result.usage.completionTokens,
-        'gen_ai.usage.input_tokens': result.usage.promptTokens,
+        'gen_ai.usage.output_tokens': result.usage.outputTokens,
+        'gen_ai.usage.input_tokens': result.usage.inputTokens,
         'gen_ai.response.finish_reasons': result.finishReason,
       },
     });

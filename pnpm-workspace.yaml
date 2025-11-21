@@ -10,4 +10,10 @@ onlyBuiltDependencies:
   - protobufjs
 
 injectWorkspacePackages: true
-strictPeerDependencies: true
+
+# TODO: enable when the following can be satisfied:
+# examples/agent-demo
+# └─┬ @mastra/core 0.24.1
+#   └─┬ @openrouter/ai-sdk-provider 1.2.0
+#     └── ✕ unmet peer ai@^5.0.0: found 4.3.19
+strictPeerDependencies: false
