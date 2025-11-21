@@ -41,7 +41,7 @@
     "@tsconfig/node22": "22.0.2",
     "@types/node": "22.19.1",
     "conventional-changelog-conventionalcommits": "9.1.0",
-    "lefthook": "2.0.3",
+    "lefthook": "2.0.4",
     "semantic-release": "25.0.2",
     "tsup": "8.5.0",
     "typescript": "5.9.3"
