@@ -66,6 +66,7 @@ jobs:
 
   docker-agent-demo:
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
       contents: read
       packages: write
