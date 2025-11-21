@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/github",
+      {
+        "releasedLabels": false,
+        "successCommentCondition": "<% return issue.user.type !== 'Bot'; %>"
+      }
+    ],
+    "@containerbase/semantic-release-pnpm"
+  ],
+  "branches": [
+    {
+      "name": "main"
+    }
+  ],
+  "preset": "conventionalcommits",
+  "tagFormat": "v${version}"
+}
