@@ -65,14 +65,14 @@ importers:
         specifier: 1.51.1
         version: 1.51.1
       '@mastra/core':
-        specifier: 0.24.1
-        version: 0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
+        specifier: 0.24.5
+        version: 0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
       '@mastra/loggers':
         specifier: 0.10.19
-        version: 0.10.19(@mastra/core@0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))
+        version: 0.10.19(@mastra/core@0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))
       '@mastra/mcp':
         specifier: 0.14.2
-        version: 0.14.2(@mastra/core@0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
+        version: 0.14.2(@mastra/core@0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
       '@modelcontextprotocol/sdk':
         specifier: 1.22.0
         version: 1.22.0
@@ -187,8 +187,8 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/google@2.0.23':
-    resolution: {integrity: sha512-VbCnKR+6aWUVLkAiSW5gUEtST7KueEmlt+d6qwDikxlLnFG9pzy59je8MiDVeM5G2tuSXbvZQF78PGIfXDBmow==}
+  '@ai-sdk/google@2.0.40':
+    resolution: {integrity: sha512-E7MTVE6vhWXQJzXQDvojwA9t5xlhWpxttCH3R/kUyiE6y0tT8Ay2dmZLO+bLpFBQ5qrvBMrjKWpDVQMoo6TJZg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -699,8 +699,8 @@ packages:
     peerDependencies:
       '@biomejs/biome': ^2.3.0
 
-  '@mastra/core@0.24.1':
-    resolution: {integrity: sha512-2Sg1yhXbYxPDAmTnEdxC7iIQZmsmLBFX0ZeAqeYOeuUJ8UfR0hJZi79U7Ugn7JnqVM+Uxomdid+62DaTRv6gJA==}
+  '@mastra/core@0.24.5':
+    resolution: {integrity: sha512-qeME8S7bgc1dbgx5lUcTwt0EOHLu6YBUOHmhRstQFWGRtq3lxMexJ1RPmhZLiOcGPR6/8D8mWDnv/dMOKA8E8w==}
     engines: {node: '>=20'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
@@ -4076,10 +4076,10 @@ snapshots:
       '@vercel/oidc': 3.0.3
       zod: 3.25.76
 
-  '@ai-sdk/google@2.0.23(zod@3.25.76)':
+  '@ai-sdk/google@2.0.40(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.12(zod@3.25.76)
+      '@ai-sdk/provider-utils': 3.0.17(zod@3.25.76)
       zod: 3.25.76
 
   '@ai-sdk/mistral@2.0.23(zod@3.25.76)':
@@ -4779,11 +4779,11 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.3.7
 
-  '@mastra/core@0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)':
+  '@mastra/core@0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)':
     dependencies:
       '@a2a-js/sdk': 0.2.5
       '@ai-sdk/anthropic-v5': '@ai-sdk/anthropic@2.0.33(zod@3.25.76)'
-      '@ai-sdk/google-v5': '@ai-sdk/google@2.0.23(zod@3.25.76)'
+      '@ai-sdk/google-v5': '@ai-sdk/google@2.0.40(zod@3.25.76)'
       '@ai-sdk/mistral-v5': '@ai-sdk/mistral@2.0.23(zod@3.25.76)'
       '@ai-sdk/openai-compatible-v5': '@ai-sdk/openai-compatible@1.0.22(zod@3.25.76)'
       '@ai-sdk/openai-v5': '@ai-sdk/openai@2.0.53(zod@3.25.76)'
@@ -4845,16 +4845,16 @@ snapshots:
       - valibot
       - zod-openapi
 
-  '@mastra/loggers@0.10.19(@mastra/core@0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))':
+  '@mastra/loggers@0.10.19(@mastra/core@0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))':
     dependencies:
-      '@mastra/core': 0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
+      '@mastra/core': 0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
       pino: 9.14.0
       pino-pretty: 13.1.2
 
-  '@mastra/mcp@0.14.2(@mastra/core@0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)':
+  '@mastra/mcp@0.14.2(@mastra/core@0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.2.1(@types/json-schema@7.0.15)
-      '@mastra/core': 0.24.1(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
+      '@mastra/core': 0.24.5(openapi-types@12.1.3)(react@19.2.0)(zod@3.25.76)
       '@modelcontextprotocol/sdk': 1.22.0
       date-fns: 4.1.0
       exit-hook: 4.0.0
