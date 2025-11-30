@@ -11,7 +11,7 @@
   "packageManager": "pnpm@10.23.0",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "3.0.62",
-    "@ai-sdk/openai": "2.0.71",
+    "@ai-sdk/openai": "2.0.74",
     "@dotenvx/dotenvx": "1.51.1",
     "@mastra/core": "0.24.5",
     "@mastra/loggers": "0.10.19",
