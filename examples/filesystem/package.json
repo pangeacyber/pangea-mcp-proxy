@@ -10,7 +10,7 @@
   },
   "packageManager": "pnpm@10.23.0",
   "dependencies": {
-    "@aws-sdk/client-bedrock-runtime": "^3.938.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.941.0",
     "@dotenvx/dotenvx": "^1.51.1",
     "@modelcontextprotocol/sdk": "^1.22.0",
     "citty": "^0.1.6",
