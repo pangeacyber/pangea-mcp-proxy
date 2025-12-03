@@ -13,7 +13,7 @@
     "@ai-sdk/amazon-bedrock": "3.0.62",
     "@ai-sdk/openai": "2.0.74",
     "@dotenvx/dotenvx": "1.51.1",
-    "@mastra/core": "0.24.5",
+    "@mastra/core": "0.24.6",
     "@mastra/loggers": "0.10.19",
     "@mastra/mcp": "0.14.3",
     "@modelcontextprotocol/sdk": "1.22.0",
