@@ -16,7 +16,7 @@
     "@mastra/core": "0.24.6",
     "@mastra/loggers": "0.10.19",
     "@mastra/mcp": "0.14.4",
-    "@modelcontextprotocol/sdk": "1.24.0",
+    "@modelcontextprotocol/sdk": "1.24.3",
     "@opentelemetry/api-logs": "0.208.0",
     "@opentelemetry/exporter-logs-otlp-grpc": "0.208.0",
     "@opentelemetry/sdk-logs": "0.208.0",
