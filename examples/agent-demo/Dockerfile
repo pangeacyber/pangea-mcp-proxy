@@ -1,4 +1,4 @@
-FROM node:22.21.1-alpine@sha256:b2358485e3e33bc3a33114d2b1bdb18cdbe4df01bd2b257198eb51beb1f026c5 AS base
+FROM node:22.21.1-alpine@sha256:9632533eda8061fc1e9960cfb3f8762781c07a00ee7317f5dc0e13c05e15166f AS base
 
 LABEL name="agent-demo"
 LABEL org.opencontainers.image.source="https://github.com/pangeacyber/pangea-mcp-proxy" \
