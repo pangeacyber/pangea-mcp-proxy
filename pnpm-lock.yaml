@@ -31,9 +31,9 @@ importers:
       '@kenan/biome-config':
         specifier: 1.0.6
         version: 1.0.6(@biomejs/biome@2.3.8)
-      '@tsconfig/node22':
-        specifier: 22.0.5
-        version: 22.0.5
+      '@tsconfig/node24':
+        specifier: 24.0.0
+        version: 24.0.0
       '@types/node':
         specifier: 22.19.2
         version: 22.19.2
@@ -98,9 +98,9 @@ importers:
         specifier: 3.25.76
         version: 3.25.76
     devDependencies:
-      '@tsconfig/node22':
-        specifier: 22.0.5
-        version: 22.0.5
+      '@tsconfig/node24':
+        specifier: 24.0.0
+        version: 24.0.0
       '@types/node':
         specifier: 22.19.2
         version: 22.19.2
@@ -132,9 +132,9 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
     devDependencies:
-      '@tsconfig/node22':
-        specifier: 22.0.5
-        version: 22.0.5
+      '@tsconfig/node24':
+        specifier: 24.0.0
+        version: 24.0.0
       '@types/node':
         specifier: 22.19.2
         version: 22.19.2
@@ -1730,8 +1730,8 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
-  '@tsconfig/node22@22.0.5':
-    resolution: {integrity: sha512-hLf2ld+sYN/BtOJjHUWOk568dvjFQkHnLNa6zce25GIH+vxKfvTgm3qpaH6ToF5tu/NN0IH66s+Bb5wElHrLcw==}
+  '@tsconfig/node24@24.0.0':
+    resolution: {integrity: sha512-3/6Cr4dELEAucgPIr6ufY7yBYMi4ttZFOewABADNZ+bm4DUZl4dup2VBcBeP1ejj3QblrWVWux/1XcRv/ZVikA==}
 
   '@types/aws-lambda@8.10.152':
     resolution: {integrity: sha512-soT/c2gYBnT5ygwiHPmd9a1bftj462NWVk2tKCc1PYHSIacB2UwbTS2zYG4jzag1mRDuzg/OjtxQjQ2NKRB6Rw==}
@@ -6224,7 +6224,7 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
-  '@tsconfig/node22@22.0.5': {}
+  '@tsconfig/node24@24.0.0': {}
 
   '@types/aws-lambda@8.10.152': {}
 
