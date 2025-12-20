@@ -59,8 +59,8 @@ importers:
         specifier: 3.0.70
         version: 3.0.70(zod@3.25.76)
       '@ai-sdk/openai':
-        specifier: 2.0.85
-        version: 2.0.85(zod@3.25.76)
+        specifier: 2.0.88
+        version: 2.0.88(zod@3.25.76)
       '@dotenvx/dotenvx':
         specifier: 1.51.2
         version: 1.51.2
@@ -211,8 +211,8 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/openai@2.0.85':
-    resolution: {integrity: sha512-3pzr7qVhsOXwjPAfmvFNZz3sRWCuyMOc3GgLHe7sWY0t8J4hA5mwQ4LISTKYI3iIr8IXzAQn9MUrC8Hiji9RpA==}
+  '@ai-sdk/openai@2.0.88':
+    resolution: {integrity: sha512-LlOf83haeZIiRUH1Zw1oEmqUfw5y54227CvndFoBpIkMJwQDGAB3VARUeOJ6iwAWDJjXSz06GdnEnhRU67Yatw==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -4073,7 +4073,7 @@ snapshots:
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.76)
       zod: 3.25.76
 
-  '@ai-sdk/openai@2.0.85(zod@3.25.76)':
+  '@ai-sdk/openai@2.0.88(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 2.0.0
       '@ai-sdk/provider-utils': 3.0.19(zod@3.25.76)
