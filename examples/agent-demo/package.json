@@ -8,7 +8,7 @@
     "build": "tsup",
     "typecheck": "tsc --noEmit"
   },
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.26.2",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "3.0.72",
     "@ai-sdk/openai": "2.0.88",
