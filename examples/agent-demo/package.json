@@ -12,7 +12,7 @@
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "3.0.72",
     "@ai-sdk/openai": "2.0.88",
-    "@dotenvx/dotenvx": "1.51.2",
+    "@dotenvx/dotenvx": "1.51.4",
     "@mastra/core": "0.24.9",
     "@mastra/loggers": "0.10.19",
     "@mastra/mcp": "0.14.5",
